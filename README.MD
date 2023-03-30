@@ -23,25 +23,25 @@
 
 <ul>
   <li>
-    <h2>First Function</h2>
+    <h3>First Function</h3>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus rhoncus dapibus. Phasellus vulputate pellentesque nulla id pretium. Donec nunc enim, dictum sit amet purus a, interdum accumsan mauris. Vestibulum.
 
   </li>
   <li>
-    <h2>Second Function</h2>
+    <h3>Second Function</h3>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus rhoncus dapibus. Phasellus vulputate pellentesque nulla id pretium. Donec nunc enim, dictum sit amet purus a, interdum accumsan mauris. Vestibulum.
 
   </li>
   <li>
-    <h2>Third Function</h2>
+    <h3>Third Function</h3>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus rhoncus dapibus. Phasellus vulputate pellentesque nulla id pretium. Donec nunc enim, dictum sit amet purus a, interdum accumsan mauris. Vestibulum.
 
   </li>
   <li>
-    <h2>Fourth Function</h2>
+    <h3>Fourth Function</h3>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus rhoncus dapibus. Phasellus vulputate pellentesque nulla id pretium. Donec nunc enim, dictum sit amet purus a, interdum accumsan mauris. Vestibulum.
 
