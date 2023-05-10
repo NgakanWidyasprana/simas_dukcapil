@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Surat Masuk Page</title>
+
+  <link rel="stylesheet" href="/assets/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <main class="d-flex flex-nowrap" style="background-color: #F1F4FA;">
+  
+
+    <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 220px; background-color: #FFFFFF;">
+      <!-- make the logo in the middle -->
+      <div id="logo">
+        <img class="bi pe-none me-2 logo-dashboard" src="/assets/logo/logo simas.png" alt="logo" width="150px" height="102px">
+      </div>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link " aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="surat-masuk.html" class="nav-link active">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+              Surat Masuk
+            </a>
+          </li>
+          <li>
+            <a href="surat-tugas.html" class="nav-link ">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+              Surat Tugas
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div >Logout</div>
+    </div>
+  
+    <div class="b-example-vr"></div>
+    <div>
+      <div class="text-top title-page">Tambah Surat Masuk</div>
+      <div class="text-top petugas"></div>
+      <button class="add-surat" onclick="window.location.href = 'surat-masuk.html';">Kembali</button>
+      <form class="form-tambah-surat">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">No Agenda</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">No Surat Masuk</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Perihal</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Lampiran</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Tanggal Surat</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Unggah File</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+    </div>
+
+    
+    
+  </main>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
