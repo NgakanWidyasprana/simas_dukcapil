@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surat-Masuk-Kasubag</title>
+  <title>Surat Masuk</title>
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
@@ -31,7 +31,7 @@
       </div>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="dashboard.html" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
+          <a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
             <img src="../../Assets/icon/Category-1.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
             </svg>
@@ -39,14 +39,14 @@
           </a>
         </li>
         <li>
-          <a href="surat-masuk.html" class="nav-link  active"  style="background-color: #3A36DB;">
+          <a href="surat-masuk.php" class="nav-link  active"  style="background-color: #3A36DB;">
             <img src="../../Assets/icon/Chart.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Masuk
           </a>
         </li>
         <li>
-          <a href="surat-tugas.html" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
+          <a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
             <img src="../../Assets/icon/Ticket.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Tugas
@@ -60,7 +60,7 @@
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Surat Masuk</div>
       </div>
-      <button class="add-surat" onclick="window.location.href = 'tambah-surat-masuk.html';">+ Tambah Surat Masuk</button>  
+      <button class="add-surat" onclick="window.location.href = 'tambah-surat-masuk.php';">+ Tambah Surat Masuk</button>  
       <div class="row card-section-surat-masuk">
         <table class="table table-fluid" id="example">
           <thead>
@@ -88,7 +88,7 @@
                 <div class="action-button">
                   <button class="delete-button" >Delete</button>
                   <button class="edit-button" >Edit</button>
-                  <button class="status-button" onclick="window.location.href = 'status-surat.html';" >Status</button>
+                  <button class="status-button" onclick="window.location.href = 'status-surat.php';" >Status</button>
                 </div>
               </td>
             </tr>

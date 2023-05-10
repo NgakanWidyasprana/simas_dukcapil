@@ -14,9 +14,9 @@ if(isset($_POST['submit'])){
     if($result->num_rows > 0){
         $data = mysqli_fetch_assoc($result);
         $_SESSION['username'] = $data['username'];
-        header("Location: ../../index.php");  
+        header("Location: ../../src/Kasubag/dashboard.php");
     }else{
-        header("Location: ../../Form/form-login.php?status=g004");  
+        header("Location: ../../src/authentication.php?status=g004");
     }
 }
 ?>
