@@ -8,7 +8,7 @@
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
-  <link rel="stylesheet" href="/assets/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Assets/dist/css/bootstrap.min.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
@@ -27,12 +27,12 @@
   <div class="my-container">
     <div class="sidebar">
       <div id="logo">
-        <img class="bi pe-none me-2 logo-dashboard" src="/assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">
+        <img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">
       </div>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <a href="dashboard.html" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
-            <img src="/assets/icon/Category-1.svg" alt="">
+            <img src="../../Assets/icon/Category-1.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
             </svg>
             Home
@@ -40,14 +40,14 @@
         </li>
         <li>
           <a href="surat-masuk.html" class="nav-link  active"  style="background-color: #3A36DB;">
-            <img src="/assets/icon/Chart.svg" alt="">
+            <img src="../../Assets/icon/Chart.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Masuk
           </a>
         </li>
         <li>
           <a href="surat-tugas.html" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
-            <img src="/assets/icon/Ticket.svg" alt="">
+            <img src="../../Assets/icon/Ticket.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Tugas
           </a>
@@ -57,108 +57,61 @@
     
     <div class="main flex-column">
       
-      <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
+      <div class="title-section d-flex flex-row" style="margin-bottom: 40px;">
         <div class="text-top title-page">Status Surat</div>
       </div>
 
-      <div class="d-flex flex-column">
-        <div class="flex-row">
-          <div>ini row 1</div>
-          <div>ini row 2</div>
-        </div>
-
-      </div>
-
-      <div class="row card-section-surat-masuk">
-        <table class="table table-fluid" id="example">
+      
+      <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
+        <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
           <thead>
             <tr>
-              <th scope="col">No</th>
-              <th scope="col">Nomor Surat</th>
-              <th scope="col">Sifat</th>
-              <th scope="col">Lampiran</th>
-              <th scope="col">Hal</th>
-              <th scope="col">Tanggal Surat</th>
-              <th scope="col">Instansi Pengirim</th>
-              <th scope="col">Aksi</th>
+              <th scope="col">No Agenda</th>
+              <th scope="col">Tanggal Masuk</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">001</th>
-              <td>070/01/ DISDUKCAPIL</td>
-              <td>Biasa</td>
-              <td>1</td>
-              <td>Kerja Praktik</td>
-              <td>16/03/2023</td>
-              <td>Universitas Udayana</td>
-              <td>
-                <div class="action-button">
-                  <button class="delete-button" >Delete</button>
-                  <button class="edit-button" >Detail</button>
-                  
-                </div>
-              </td>
+              <td>13/03/2023</td>
             </tr>
-            <div class="table table-section">
-              <table>
-                <thead>
-                  <tr>
-                    <th>No Agenda</th>
-                    <th>Tanggal Masuk</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>001</td>
-                    <td>13/03/2023</td>
-                  </tr>
-                </tbody>
-              </table>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Nomor Surat</th>
-                    <th>Perihal</th>
-                    <th>Kepada</th>
-                    <th>Kolom 3</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>Baris 1</th>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                  </tr>
-                  <tr>
-                    <th>Baris 2</th>
-                    <td>Data 4</td>
-                    <td>Data 5</td>
-                    <td>Data 6</td>
-                  </tr>
-                  <tr>
-                    <th>Baris 3</th>
-                    <td>Data 7</td>
-                    <td>Data 8</td>
-                    <td>Data 9</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-
-
           </tbody>
         </table>
+  
+        <table class="table">
+          <tr>
+            <th>Hal Surat</th>
+            <td>Praktek Kerja Lapangan</td>
+          </tr>
+          <tr>
+            <th>Instansi Pengirim</th>
+            <td>Universitas Udayana</td>
+          </tr>
+          <tr>
+            <th>Nomor Surat</th>
+            <td>01/DISDUKCAPIL</td>
+          </tr>
+          <tr>
+            <th>Lampiran</th>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th>File</th>
+            <td><button>install</button></td>
+          </tr>
+          <tr>
+            <th>Telah Disetujui</th>
+            <td>
+              <div>kasubag</div>
+              <div>sekretaris</div>
+              <div>kepala dinas</div>
+            </td>
+          </tr>
+        </table>
         
+        <button class="add-surat" onclick="window.location.href = 'surat-masuk.html';">Kembali</button> 
       </div>
-
-      
-      
-      
-      
-      
+       
     </div>
   </div>
 </body>

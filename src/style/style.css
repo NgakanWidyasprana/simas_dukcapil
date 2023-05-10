@@ -124,7 +124,7 @@ logo{
 }
 
 .logo-dashboard{
-  margin-left: 19px;
+  margin-left: 20px;
   margin-top: 11px;
   margin-bottom: 40px;
 }
@@ -152,7 +152,7 @@ logo{
   align-items: center;
   line-height: 208.32px;
   color: #3A36DB;
-  left: 894px;
+  left: 937px;
   text-shadow: -13px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -167,13 +167,14 @@ logo{
   text-shadow: -13px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+
 .logo-badung{
   position: absolute;
   top: 339px;
   transform: translate(-50%, -50%);
   width: 212px;
   height: 197px;
-  left: 534px;
+  left: 540px;
   filter: drop-shadow(-17px 1px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -181,7 +182,7 @@ logo{
   position: absolute;
   width: 176px;
   height: 117px;
-  left: 1150px;
+  left: 1238px;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
