@@ -1,5 +1,6 @@
 <?php
-
+    
+    include("..\Database\connection-function\config.php");
 
     $sql = "SELECT * FROM identitas_pegawai";
     $query = mysqli_query($db, $sql);
@@ -12,10 +13,11 @@
             echo "<td>".$pegawai['jenis_kelamin']."</td>";
             echo "<td>".$pegawai['agama']."</td>";
             echo "<td>".$pegawai['asal']."</td>";
+            echo "<td>".$pegawai['jobdesk']."</td>";
 
             echo "<td>";
-            echo "<a href='form-edit.php?id=".$pegawai['NIP']."'>Edit</a> || ";
-            echo "<a href='hapus.php?id=".$pegawai['NIP']."'>Hapus</a>";
+            echo '<a href= ..\Form\form-edit.php?id='.$pegawai['NIP'].">Edit</a> || ";
+            echo "<a href= ..\Database\process-function\proses-hapus.php?id=".$pegawai['NIP'].">Hapus</a>";
             echo "</td>";
             
         echo "</tr>";

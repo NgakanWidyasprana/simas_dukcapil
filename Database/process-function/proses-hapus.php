@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("../connection-function/config.php");
 
     # dKey = Delete Key ==> NIP
     if(isset($_GET['id']) ){
@@ -12,7 +12,7 @@ include("config.php");
         $query = mysqli_query($db, $sql);
 
         if($query){
-            header('Location: list-pegawai.php');
+            header('Location: ../../Form/form-list-pegawai.php');
         }else{
             die("Penghapusan Gagal, Data Tidak Ditemukan");
         }

@@ -1,3 +1,5 @@
+<?php include("..\Database\connection-function\cek-session.php"); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,7 @@
         <h3>Formulir Pendaftaran Siswa Baru</h3>
     </header>
 
-    <form action="proses-pendaftaran.php" method="POST">
+    <form action="..\Database\process-function\proses-pendaftaran.php" method="POST">
 
         <fieldset>
 
@@ -30,8 +32,8 @@
 
         <p>
             <label for="jenis_kelamin">Jenis Kelamin: </label>
-            <label><input type="radio" name="jenis_kelamin" value="laki-laki"> Laki-laki</label>
-            <label><input type="radio" name="jenis_kelamin" value="perempuan"> Perempuan</label>
+            <label><input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki</label>
+            <label><input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan</label>
         </p>
 
         <p>
@@ -48,6 +50,20 @@
         <p>
             <label for="asal">Asal Pegawai: </label>
             <input type="text" name="asal" placeholder="Asal pegawai" />
+        </p>
+
+        <p>
+            <label for="jobdesk">Jobdesk: </label>
+            <select name="jobdesk">
+                <option>Admin</option>
+                <option>Pengelola Surat Dinas</option>
+                <option>Kasubag</option>
+                <option>Sekretaris Dinas</option>
+                <option>Kepala Dinas</option>
+                <option>Pengelola Surat Bidang</option>
+                <option>Kepala Bidang</option>
+                <option>Staff</option>
+            </select>
         </p>
 
         <p>

@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("..\connection-function\config.php");
 
 // cek apakah tombol daftar sudah diklik atau blum?
 if(isset($_POST['daftar'])){
@@ -12,18 +12,19 @@ if(isset($_POST['daftar'])){
     $jk = $_POST['jenis_kelamin'];
     $agama = $_POST['agama'];
     $asal_pegawai = $_POST['asal'];
+    $jobdesk = $_POST['jobdesk'];
 
     // buat query
-    $sql = "INSERT INTO identitas_pegawai (NIP, nama, alamat, jenis_kelamin, agama, asal) VALUE ('$NIP','$nama', '$alamat', '$jk', '$agama', '$asal_pegawai')";
+    $sql = "INSERT INTO identitas_pegawai (NIP, nama, alamat, jenis_kelamin, agama, asal, jobdesk) VALUE ('$NIP','$nama', '$alamat', '$jk', '$agama', '$asal_pegawai', '$jobdesk')";
     $query = mysqli_query($db, $sql);
 
     // apakah query simpan berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-        header('Location: index.php?status=sukses');
+        header('Location: ..\..\index.php?status=sukses');
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-        header('Location: index.php?status=gagal');
+        header('Location: ..\..\index.php?status=gagal');
     }
 
 

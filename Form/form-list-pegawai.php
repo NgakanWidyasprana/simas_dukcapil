@@ -1,4 +1,5 @@
-<?php include("config.php"); ?>
+<?php include("..\Database\connection-function\config.php"); ?>
+<?php include("..\Database\connection-function\cek-session.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
     <nav>
         <a href="form-daftar.php">[+] Tambah Baru</a>
         <h12> || </h12>
-        <a href="index.php"> Home </a>
+        <a href="..\index.php"> Home </a>
     </nav>
 
     <br>
@@ -27,16 +28,17 @@
                 <th>Alamat</th>
                 <th>Jenis Kelamin</th>
                 <th>Agama</th>
-                <th>Sekolah Asal</th>
+                <th>Dinas Bagian</th>
+                <th>Status User</th>
                 <th>Tindakan</th>
             </tr>
         </thead>
         <tbody>
-            <?php include("proses-data-pegawai.php");?>
+            <?php include("..\Database\process-function\proses-data-pegawai.php");?>
         </tbody>
     </table>
 
-    <p>Total: <?php echo mysqli_num_rows($query) ?></p>
+    <p>Jumlah User: <?php echo mysqli_num_rows($query) ?></p>
 
     </body>
 </html>
