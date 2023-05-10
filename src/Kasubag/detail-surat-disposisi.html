@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surat-Tugas-Kasubag</title>
+  <title>Detail-Surat-Disposisi-Kasubag</title>
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
-  <link rel="stylesheet" href="/assets/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Assets/dist/css/bootstrap.min.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
@@ -39,14 +39,14 @@
           </a>
         </li>
         <li>
-          <a href="surat-masuk.html" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;" >
+          <a href="surat-masuk.html" class="nav-link nav-button-disable " style="color: #99B2C6; opacity: 0.5;" >
             <img src="../../Assets/icon/Chart.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Masuk
           </a>
         </li>
         <li>
-          <a href="surat-tugas.html" class="nav-link active"  style="background-color: #3A36DB;">
+          <a href="surat-tugas.html" class="nav-link active " style="background-color: #3A36DB;" >
             <img src="../../Assets/icon/Ticket.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Tugas
@@ -57,51 +57,83 @@
     
     <div class="main flex-column">
       
-      <div class="title-section d-flex flex-row" style="margin-bottom: 50px;">
-        <div class="text-top title-page">Surat Tugas</div>
+      <div class="title-section d-flex flex-row" style="margin-bottom: 40px;">
+        <div class="text-top title-page">Detail Surat Disposisi</div>
       </div>
+
       
-      <div class="row card-section-surat-masuk">
-        <table class="table table-fluid" id="example">
+      <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
+        <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
           <thead>
             <tr>
-              <th scope="col">No</th>
-              <th scope="col">Nomor Surat</th>
-              <th scope="col">Sifat</th>
-              <th scope="col">Lampiran</th>
-              <th scope="col">Hal</th>
-              <th scope="col">Tanggal Surat</th>
-              <th scope="col">Instansi Pengirim</th>
-              <th scope="col">Aksi</th>
+              <th scope="col">No Agenda</th>
+              <th scope="col">Tanggal Masuk</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">001</th>
-              <td>070/01/ DISDUKCAPIL</td>
-              <td>Biasa</td>
-              <td>1</td>
-              <td>Kerja Praktik</td>
-              <td>16/03/2023</td>
-              <td>Universitas Udayana</td>
-              <td>
-                <div class="action-button">
-                  <button class="delete-button" >Delete</button>
-                  <button class="edit-button" onclick="window.location.href = 'detail-surat-disposisi.html';">Detail</button>
-                  
-                </div>
-              </td>
+              <td>13/03/2023</td>
             </tr>
-            
-            
-
-
           </tbody>
         </table>
+  
+        <table class="table">
+          <tr>
+            <th>Hal Surat</th>
+            <td>Praktek Kerja Lapangan</td>
+          </tr>
+          <tr>
+            <th>Instansi Pengirim</th>
+            <td>Universitas Udayana</td>
+          </tr>
+          <tr>
+            <th>Nomor Surat</th>
+            <td>01/DISDUKCAPIL</td>
+          </tr>
+          <tr>
+            <th>Lampiran</th>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th>File</th>
+            <td><button>install</button></td>
+          </tr>
+          <tr>
+            <th>Telah Disetujui</th>
+            <td>
+              <div>kasubag</div>
+              <div>sekretaris</div>
+              <div>kepala dinas</div>
+            </td>
+          </tr>
+        </table>
+
+        <table class="table " style="text-align: center;  border-radius: 5px;"" >
+          <thead style="background-color: #3A36DB; color: azure;">
+            <tr>
+              <th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <td>
+              <textarea style="width: 800px;" name="laporan" id="" cols="30" rows="10"></textarea>
+            </td>
+          </tbody>
+          
+          
+            
+        </table>
+
         
+      </div>
+      <div class="d-flex">
+        <button class="add-surat">Submit</button> 
+        <button class="add-surat" onclick="window.location.href = 'surat-tugas.html';">Kembali</button> 
       </div>
       
       
+       
     </div>
   </div>
 </body>
