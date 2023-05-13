@@ -2,10 +2,8 @@
 <?php include("Database\connection-function\cek-session.php"); ?>
 <?php include("Database\db-create-function\db-table.php"); ?>
 
-<?php 
-/*
-    !!!! Not Used, Don't Uncomment or Deleted Now!!!!
-
+<?php
+    /*
     <!DOCTYPE html>
     <html>
 
@@ -39,5 +37,5 @@
             <?php include 'Database\addons-function\notif_daftar.php';?>
         </body>
     </html>
- */
+    */
 ?>
