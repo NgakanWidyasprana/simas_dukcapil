@@ -56,12 +56,9 @@
     </div>
     
     <div class="main flex-column">
-      
-      <div class="title-section d-flex flex-row" style="margin-bottom: 40px;">
+      <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Detail Surat Disposisi</div>
       </div>
-
-      
       <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
         <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
           <thead>
@@ -97,7 +94,7 @@
           </tr>
           <tr>
             <th>File</th>
-            <td><button>install</button></td>
+            <td><a href="#">install</a></td>
           </tr>
           <tr>
             <th>Telah Disetujui</th>
@@ -105,6 +102,18 @@
               <div>kasubag</div>
               <div>sekretaris</div>
               <div>kepala dinas</div>
+            </td>
+          </tr>
+          <tr>
+            <th>Teruskan</th>
+            <td>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Diteruskan Kepada</option>
+                <option value="1">Kasubag</option>
+                <option value="2">Sekretaris</option>
+                <option value="3">Kepala Dinas</option>
+                <option value="3">Kepala Bidang</option>
+              </select>
             </td>
           </tr>
         </table>
@@ -117,7 +126,7 @@
           </thead>
           <tbody>
             <td>
-              <textarea style="width: 800px;" name="laporan" id="" cols="30" rows="10"></textarea>
+              <textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>
             </td>
           </tbody>
           
@@ -127,9 +136,9 @@
 
         
       </div>
-      <div class="d-flex">
-        <button class="add-surat">Submit</button> 
-        <button class="add-surat" onclick="window.location.href = 'surat-tugas.html';">Kembali</button> 
+      <div class="ml-2" style="text-align: center;">
+        <button type="submit" class="btn btn-primary submit-button" >Submit</button>
+        <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-tugas.html';">Kembali</button>
       </div>
       
       
