@@ -56,7 +56,6 @@
     </div>
     
     <div class="main flex-column">
-      
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Surat Masuk</div>
       </div>
@@ -87,8 +86,8 @@
               <td>
                 <div class="action-button">
                   <button class="delete-button" >Delete</button>
-                  <button class="edit-button" onclick="window.location.href = 'status-surat-edit.html';" >Edit</button>
-                  <button class="status-button" onclick="window.location.href = 'status-surat.html';" >Status</button>
+                  <button class="edit-button" onclick="window.location.href = 'status-surat-edit.php';" >Edit</button>
+                  <button class="status-button" onclick="window.location.href = 'status-surat.php';" >Status</button>
                 </div>
               </td>
             </tr>
@@ -156,15 +155,9 @@
                 </div>
               </td>
             </tr>
-            
-
-
           </tbody>
         </table>
-        
       </div>
-      
-      
     </div>
   </div>
 </body>

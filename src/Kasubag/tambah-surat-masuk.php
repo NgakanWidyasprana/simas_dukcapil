@@ -112,16 +112,10 @@
         </div>
       </form>
 
-      
       <button type="submit" class="btn btn-primary">Submit</button>
       <button class="btn btn-primary" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
       
-       
     </div>
   </div>
-
-
-
-  
 </body>
 </html>

@@ -113,7 +113,6 @@
         
         <button class="add-surat" onclick="window.location.href = 'surat-masuk.php';">Kembali</button> 
       </div>
-       
     </div>
   </div>
 </body>

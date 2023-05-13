@@ -75,6 +75,7 @@
               <th scope="col">Aksi</th>
             </tr>
           </thead>
+          
           <tbody>
             <tr>
               <th scope="row">001</th>
@@ -87,21 +88,14 @@
               <td>
                 <div class="action-button">
                   <button class="delete-button" >Delete</button>
-                  <button class="edit-button" onclick="window.location.href = 'detail-surat-disposisi.html';">Detail</button>
-                  
+                  <button class="edit-button" onclick="window.location.href = 'detail-surat-disposisi.php';">Detail</button>
                 </div>
               </td>
             </tr>
-            
-            
-
-
           </tbody>
         </table>
-        
+
       </div>
-      
-      
     </div>
   </div>
 </body>
