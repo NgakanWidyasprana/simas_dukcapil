@@ -1,10 +1,12 @@
+<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Dashboard - <?php echo $_SESSION['status']; ?></title>
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
@@ -31,7 +33,7 @@
       </div>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="dashboard.html" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">
+          <a href="dashboard.php" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">
             <img src="../../Assets/icon/Category-1.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
             </svg>
@@ -39,14 +41,14 @@
           </a>
         </li>
         <li>
-          <a href="surat-masuk.html" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
+          <a href="surat-masuk.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
             <img src="../../Assets/icon/Chart.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Masuk
           </a>
         </li>
         <li>
-          <a href="surat-tugas.html" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
+          <a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
             <img src="../../Assets/icon/Ticket.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Tugas
@@ -57,7 +59,7 @@
     <div class="main flex-column">
       <div class="title-section" style="margin-bottom: 10px;">
         <div class="text-top title-page">Home</div>
-        <div class="text-top petugas">Selamat datang Pengelola Surat</div>
+        <div class="text-top petugas">Selamat datang <?php echo $_SESSION['status']; ?></div>
       </div>
       
       <div class="row card-section">
@@ -66,7 +68,7 @@
             <div class="card-body">
               <h5 class="card-title">Surat Masuk</h5>
               <p class="card-text">10 surat</p>
-              <a href="surat-masuk.html" class="btn btn-primary" style="background-color: #3A36DB;">Go somewhere</a>
+              <a href="surat-masuk.php" class="btn btn-primary" style="background-color: #3A36DB;">Go somewhere</a>
             </div>
           </div>
         </div>
@@ -75,7 +77,7 @@
             <div class="card-body">
               <h5 class="card-title">Disposisi</h5>
               <p class="card-text">10 surat disposisi</p>
-              <a href="surat-tugas.html" class="btn btn-primary" style="background-color: #3A36DB;">Go somewhere</a>
+              <a href="surat-tugas.php" class="btn btn-primary" style="background-color: #3A36DB;">Go somewhere</a>
             </div>
           </div>
         </div>

@@ -3,7 +3,8 @@
 
     session_start();
     if(!isset($_SESSION['username'])){
-        header ('Location: Form\form-login.php');
+        header ('Location: src\authentication.php');
+        die();
     }else{
         $username = $_SESSION['username'];
         $sql = "SELECT * FROM level_users WHERE username='$username'";

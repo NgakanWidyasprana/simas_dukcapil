@@ -1,10 +1,12 @@
+<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Status-Surat-Kasubag</title>
+  <title>Status Surat</title>
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
@@ -31,7 +33,7 @@
       </div>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="dashboard.html" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
+          <a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
             <img src="../../Assets/icon/Category-1.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
             </svg>
@@ -39,14 +41,14 @@
           </a>
         </li>
         <li>
-          <a href="surat-masuk.html" class="nav-link  active"  style="background-color: #3A36DB;">
+          <a href="surat-masuk.php" class="nav-link  active"  style="background-color: #3A36DB;">
             <img src="../../Assets/icon/Chart.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Masuk
           </a>
         </li>
         <li>
-          <a href="surat-tugas.html" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
+          <a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
             <img src="../../Assets/icon/Ticket.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Tugas
@@ -109,9 +111,8 @@
           </tr>
         </table>
         
-        <button class="add-surat" onclick="window.location.href = 'surat-masuk.html';">Kembali</button> 
+        <button class="add-surat" onclick="window.location.href = 'surat-masuk.php';">Kembali</button> 
       </div>
-       
     </div>
   </div>
 </body>
