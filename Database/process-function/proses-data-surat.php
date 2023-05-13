@@ -1,29 +1,41 @@
 <?php 
 
-include("..\Database\connection-function\config.php");
+include("..\..\Database\connection-function\config.php");
 
 function data_surat($status,$db){
     $sql = "SELECT * FROM data_surat WHERE status='$status'";
     $query = mysqli_query($db, $sql);
+    $number = 1;
 
     while($surat=mysqli_fetch_array($query)){
         echo "<tr>";
+            // echo "<td>".$surat['nomer_surat']."</td>";
+            // echo "<td>".$surat['sifat']."</td>";
+            // echo "<td>".$surat['title']."</td>";
+            // echo "<td>".$surat['lampiran']."</td>";
+            // echo "<td>".$surat['perihal']."</td>";
+            // echo "<td>".$surat['tanggal_surat']."</td>";
+            // echo "<td>".$surat['instansi_pengirim']."</td>";
+            // // echo "<td>".$surat['status']."</td>";
+            // //echo "<td>";
+            // echo '<td><a href= ..\Database\process-function\proses-download-surat.php?link='.$surat['link'].">Download</a></td>";
+            // //echo "</td>";
+
+            echo "<th scope='row'>".$number."</th>";
             echo "<td>".$surat['nomer_surat']."</td>";
             echo "<td>".$surat['sifat']."</td>";
-            echo "<td>".$surat['title']."</td>";
             echo "<td>".$surat['lampiran']."</td>";
             echo "<td>".$surat['perihal']."</td>";
             echo "<td>".$surat['tanggal_surat']."</td>";
             echo "<td>".$surat['instansi_pengirim']."</td>";
-            // echo "<td>".$surat['status']."</td>";
-            
-            //echo "<td>";
-            echo '<td><a href= ..\Database\process-function\proses-download-surat.php?link='.$surat['link'].">Download</a></td>";
-            //echo "</td>";
-            
+            echo "<td>";
+                echo '<button class="delete-button" >Delete</button>';
+                echo '<button class="edit-button" onclick="window.location.href='."'status-surat-edit.php'".'";" >Edit</button>';
+                echo '<button class="status-button" onclick="window.location.href='."'status-surat.php'".';" >Status</button>';    
+            echo "</td>";
         echo "</tr>";
+        $number++;
     }
-
     return $query;
 }
 

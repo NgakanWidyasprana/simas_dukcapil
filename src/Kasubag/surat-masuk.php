@@ -1,3 +1,5 @@
+<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,86 +77,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">001</th>
-              <td>070/01/ DISDUKCAPIL</td>
-              <td>Biasa</td>
-              <td>1</td>
-              <td>Kerja Praktik</td>
-              <td>16/03/2023</td>
-              <td>Universitas Udayana</td>
-              <td>
-                <div class="action-button">
-                  <button class="delete-button" >Delete</button>
-                  <button class="edit-button" onclick="window.location.href = 'status-surat-edit.php';" >Edit</button>
-                  <button class="status-button" onclick="window.location.href = 'status-surat.php';" >Status</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">002</th>
-              <td>070/01/ DISDUKCAPIL</td>
-              <td>Biasa</td>
-              <td>1</td>
-              <td>Kerja Praktik</td>
-              <td>16/03/2023</td>
-              <td>Universitas Udayana</td>
-              <td>
-                <div class="action-button">
-                  <button class="delete-button" >Delete</button>
-                  <button class="edit-button" >Edit</button>
-                  <button class="status-button" >Status</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">003</th>
-              <td>070/01/ DISDUKCAPIL</td>
-              <td>Biasa</td>
-              <td>1</td>
-              <td>Kerja Praktik</td>
-              <td>16/03/2023</td>
-              <td>Universitas Udayana</td>
-              <td>
-                <div class="action-button">
-                  <button class="delete-button" >Delete</button>
-                  <button class="edit-button" >Edit</button>
-                  <button class="status-button" >Status</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">003</th>
-              <td>070/01/ DISDUKCAPIL</td>
-              <td>Biasa</td>
-              <td>1</td>
-              <td>Kerja Praktik</td>
-              <td>16/03/2023</td>
-              <td>Universitas Udayana</td>
-              <td>
-                <div class="action-button">
-                  <button class="delete-button" >Delete</button>
-                  <button class="edit-button" >Edit</button>
-                  <button class="status-button" >Status</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">003</th>
-              <td>070/01/ DISDUKCAPIL</td>
-              <td>Biasa</td>
-              <td>1</td>
-              <td>Kerja Praktik</td>
-              <td>16/03/2023</td>
-              <td>Universitas Udayana</td>
-              <td>
-                <div class="action-button">
-                  <button class="delete-button" >Delete</button>
-                  <button class="edit-button" >Edit</button>
-                  <button class="status-button" >Status</button>
-                </div>
-              </td>
-            </tr>
+              <?php include("..\..\Database\process-function\proses-data-surat.php");?>
           </tbody>
         </table>
       </div>
