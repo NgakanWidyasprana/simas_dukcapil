@@ -87,7 +87,7 @@
               <td>
                 <div class="action-button">
                   <button class="delete-button" >Delete</button>
-                  <button class="edit-button" >Detail</button>
+                  <button class="edit-button" onclick="window.location.href = 'detail-surat-disposisi.html';">Detail</button>
                   
                 </div>
               </td>
