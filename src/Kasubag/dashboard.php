@@ -27,61 +27,115 @@
 </head>
 <body>
   <div class="my-container">
-    <div class="sidebar">
-      <div id="logo">
-        <img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">
-      </div>
-      <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="dashboard.php" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">
-            <img src="../../Assets/icon/Category-1.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
-            </svg>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="surat-masuk.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
-            <img src="../../Assets/icon/Chart.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
-            Surat Masuk
-          </a>
-        </li>
-        <li>
-          <a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">
-            <img src="../../Assets/icon/Ticket.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
-            Surat Tugas
-          </a>
-        </li>
-      </ul>
-    </div>
+    <?php
+      switch ($_SESSION['status']) {
+        case 'Pengelola Surat Bidang':
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+
+        case 'Kepala Bidang':
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;" >';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+        
+        default:
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-masuk.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">';
+                  echo'<img src="../../Assets/icon/Chart.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Masuk';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+      }
+    ?>
+    
+    
     <div class="main flex-column">
       <div class="title-section" style="margin-bottom: 10px;">
         <div class="text-top title-page">Home</div>
         <div class="text-top petugas">Selamat datang <?php echo $_SESSION['status']; ?></div>
       </div>
       
-      <div class="row card-section">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Surat Masuk</h5>
-              <p class="card-text">10 surat</p>
-              <a href="surat-masuk.php" class="btn btn-primary" style="background-color: #3A36DB;">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Disposisi</h5>
-              <p class="card-text">10 surat disposisi</p>
-              <a href="surat-tugas.php" class="btn btn-primary" style="background-color: #3A36DB;">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+        switch ($_SESSION['status']) {
+          case 'Pengelola Surat Bidang':
+            include ("card-dashboard-bidang.php");
+            break;
+  
+          case 'Kepala Bidang':
+            include ("card-dashboard-bidang.php");
+            break;
+          
+          default:
+            include ("card-dashboard.php");
+            break;
+        }
+      ?>
+      
       
       <div class="rectangle-announcement card" style="height: 400px;" >
         <div class="petugas" style="padding: 5px; margin: 10px 0 10px 0;">Pengumuman</div>
