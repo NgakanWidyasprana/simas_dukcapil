@@ -32,7 +32,7 @@
       </div>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="dashboard.html" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
+          <a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
             <img src="../../Assets/icon/Category-1.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
             </svg>
@@ -40,14 +40,14 @@
           </a>
         </li>
         <li>
-          <a href="surat-masuk.html" class="nav-link nav-button-disable"  style="color: #99B2C6; opacity: 0.5; ">
+          <a href="surat-masuk.php" class="nav-link nav-button-disable"  style="color: #99B2C6; opacity: 0.5; ">
             <img src="../../Assets/icon/Chart.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Masuk
           </a>
         </li>
         <li>
-          <a href="surat-tugas.html" class="nav-link  active " style="background-color: #3A36DB;">
+          <a href="surat-tugas.php" class="nav-link  active " style="background-color: #3A36DB;">
             <img src="../../Assets/icon/Ticket.svg" alt="">
             <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
             Surat Tugas
@@ -119,7 +119,7 @@
       
       <div class="ml-2" style="text-align: center;">
         <button type="submit" class="btn btn-primary submit-button" >Submit</button>
-        <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-tugas.html';">Kembali</button>
+        <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-tugas.php';">Kembali</button>
       </div>
       
     </div>

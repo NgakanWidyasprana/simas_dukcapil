@@ -60,7 +60,7 @@
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Surat Tugas</div>
       </div>
-      <button class="add-surat" onclick="window.location.href = 'tambah-surat-disposisi.html';">+ Tambah Disposisi</button>  
+      <button class="add-surat" onclick="window.location.href = 'tambah-surat-disposisi.php';">+ Tambah Disposisi</button>  
       <div class="row card-section-surat-masuk">
         <table class="table table-fluid" id="example">
           <thead>
