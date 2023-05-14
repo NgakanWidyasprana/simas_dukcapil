@@ -1,3 +1,5 @@
+<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,35 +27,91 @@
 </head>
 <body>
   <div class="my-container">
-    <div class="sidebar">
-      <div id="logo">
-        <img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">
-      </div>
-      <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
-            <img src="../../Assets/icon/Category-1.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
-            </svg>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="surat-masuk.php" class="nav-link nav-button-disable " style="color: #99B2C6; opacity: 0.5;" >
-            <img src="../../Assets/icon/Chart.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
-            Surat Masuk
-          </a>
-        </li>
-        <li>
-          <a href="surat-tugas.php" class="nav-link active " style="background-color: #3A36DB;" >
-            <img src="../../Assets/icon/Ticket.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
-            Surat Tugas
-          </a>
-        </li>
-      </ul>
-    </div>
+    <?php
+      switch ($_SESSION['status']) {
+        case 'Pengelola Surat Bidang':
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;" >';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link active" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+
+        case 'Kepala Bidang':
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;" >';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link  active" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+        
+        default:
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;" >';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-masuk.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">';
+                  echo'<img src="../../Assets/icon/Chart.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Masuk';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link active" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+      }
+    ?>
     
     <div class="main flex-column">
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
@@ -93,46 +151,108 @@
             <td>1</td>
           </tr>
           <tr>
-            <th>File</th>
+            <th>Ditugaskan Kepada</th>
+            <td>Kasubag</td>
+          </tr>
+          <tr>
+            <th>File Disposisi</th>
             <td><a href="#">install</a></td>
           </tr>
-          <tr>
-            <th>Telah Disetujui</th>
-            <td>
-              <div>kasubag</div>
-              <div>sekretaris</div>
-              <div>kepala dinas</div>
-            </td>
-          </tr>
-          <tr>
-            <th>Teruskan</th>
-            <td>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Diteruskan Kepada</option>
-                <option value="1">Kasubag</option>
-                <option value="2">Sekretaris</option>
-                <option value="3">Kepala Dinas</option>
-                <option value="3">Kepala Bidang</option>
-              </select>
-            </td>
-          </tr>
+          
+          <?php
+            switch ($_SESSION['status']) {
+              case 'Pengelola Surat':
+                echo'<tr>';
+                  echo'<th>Tugaskan</th>';
+                  echo'<td>';
+                    echo'<select class="form-select" aria-label="Default select example">';
+                      echo'<option selected>Menugaskan Kepada</option>';
+                      echo'<option value="1">Kasubag</option>';
+                      echo'<option value="2">Pengelola Surat Bidang I</option>';
+                      echo'<option value="3">Pengelola Surat Bidang II</option>';
+                    echo'</select>';
+                  echo'</td>';
+                echo'</tr>';
+                break;
+
+              default:
+                # code...
+                break;
+            }
+          ?>
+          <?php
+            switch ($_SESSION['status']) {
+              case 'Sekretaris Dinas':
+                echo'<tr>';
+                  echo'<th>Upload File</th>';
+                  echo'<td>';
+                    echo'<button class="add-surat" onclick="window.location.href='."'tambah-surat-disposisi.php'".';">+ Tambah Disposisi</button>';
+                  echo'</td>';
+                echo'</tr>';
+                break;
+
+              default:
+                # code...
+                break;
+            }
+          ?>
+          
         </table>
 
-        <table class="table " style="text-align: center;  border-radius: 5px;"" >
-          <thead style="background-color: #3A36DB; color: azure;">
-            <tr>
-              <th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>
-            </tr>
-          </thead>
-          <tbody>
-            <td>
-              <textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>
-            </td>
-          </tbody>
-          
-          
-            
-        </table>
+        <?php
+          switch ($_SESSION['status']) {
+            case 'Kepala Bidang':
+              echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
+                echo'<thead style="background-color: #3A36DB; color: azure;">';
+                  echo'<tr>';
+                    echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                  echo'</tr>';
+                echo'</thead>';
+                echo'<tbody>';
+                  echo'<td>';
+                    echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
+                  echo'</td>';
+                echo'</tbody>';
+              echo'</table>';
+              break;
+
+            case 'Kasubag':
+              echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
+                echo'<thead style="background-color: #3A36DB; color: azure;">';
+                  echo'<tr>';
+                    echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                  echo'</tr>';
+                echo'</thead>';
+                echo'<tbody>';
+                  echo'<td>';
+                    echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
+                  echo'</td>';
+                echo'</tbody>';
+              echo'</table>';
+              break;
+
+            case 'Kepala Dinas':
+              echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
+                echo'<thead style="background-color: #3A36DB; color: azure;">';
+                  echo'<tr>';
+                    echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                  echo'</tr>';
+                echo'</thead>';
+                echo'<tbody>';
+                  echo'<td>';
+                    echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
+                  echo'</td>';
+                echo'</tbody>';
+              echo'</table>';
+              break;
+
+            default:
+              # code...
+              break;
+          }
+        ?>
+        
+        
 
         
       </div>

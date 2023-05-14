@@ -6,12 +6,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Surat</title>
+  <title>Detail Surat Masuk</title>
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
-  <link rel="stylesheet" href="../style/drop-zone.css">
-  <link rel="stylesheet" href="/assets/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Assets/dist/css/bootstrap.min.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
@@ -21,8 +20,7 @@
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
   <script src="../script/script.js"></script>
-  
-  
+
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,7 +86,7 @@
             echo'</div>';
             echo'<ul class="nav nav-pills flex-column mb-auto">';
               echo'<li class="nav-item">';
-                echo'<a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;" >';
+                echo'<a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">';
                   echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
                   echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
                   echo'</svg>';
@@ -116,76 +114,109 @@
     ?>
     
     <div class="main flex-column">
-      
-      <div class="title-section d-flex flex-row" style="margin-bottom: 40px;">
-        <div class="text-top title-page">Edit Surat</div>
+      <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
+        <div class="text-top title-page">Detail Surat Masuk</div>
       </div>
+      <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
+        <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
+          <thead>
+            <tr>
+              <th scope="col">No Agenda</th>
+              <th scope="col">Tanggal Masuk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">001</th>
+              <td>13/03/2023</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <table class="table">
+          <tr>
+            <th>Hal Surat</th>
+            <td>Praktek Kerja Lapangan</td>
+          </tr>
+          <tr>
+            <th>Instansi Pengirim</th>
+            <td>Universitas Udayana</td>
+          </tr>
+          <tr>
+            <th>Nomor Surat</th>
+            <td>01/DISDUKCAPIL</td>
+          </tr>
+          <tr>
+            <th>Lampiran</th>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th>File Surat</th>
+            <td><a href="#">install</a></td>
+          </tr>
+          
+          
+          <tr>
+            <?php
+              if($_SESSION['status']=="Kepala Dinas"){
+                echo '<th>Disposisikan Kepada</th>';
+              } else {
+                echo '<th>Teruskan</th>';
+              }
+              
+            ?>
+            
+            <td>
+              <?php
+                switch ($_SESSION['status']) {
+                  case 'Kasubag':
+                    echo '<select class="form-select" aria-label="Default select example">';
+                      echo'<option selected>Diteruskan Kepada</option>';
+                      
+                      echo'<option value="1">Sekretaris Dinas</option>';
+                      
+                    echo'</select>';
+                    break;
 
-      
-      <form class="form-tambah-surat" Enctype="Multipart/Form-Data">
-        <div class="d-flex" style="display: block;">
-          <div class="flex-column flex-fill p-2" >
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">No Agenda</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no agenda..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">No Surat Masuk</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no surat..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Perihal</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan perihal..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Lampiran</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan jumlah lampiran..">
-            </div>
-          </div>
+                  case 'Sekretaris Dinas':
+                    echo '<select class="form-select" aria-label="Default select example">';
+                      echo'<option selected>Diteruskan Kepada</option>';
+                      echo'<option value="1">Kepala Dinas</option>';
+                    echo'</select>';
+                    break;
+                  
+                  case 'Kepala Dinas':
+                    echo '<select class="form-select" aria-label="Default select example">';
+                      echo'<option selected>Disposisikan Kepada</option>';
+                      echo'<option value="1">Kasubag</option>';
+                      echo'<option value="2">Kepala Bidang I</option>';
+                      echo'<option value="3">Kepala Bidang II</option>';
+                      
+                    echo'</select>';
+                    break;
 
-          <div class="flex-column flex-fill p-2">
-            <div class="mb-3">
-              <label class="form-label">Tanggal Surat</label>
-              <input type="date" class="form-control" >
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Instansi Pengirim</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama instansi..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Tanggal Diterima</label>
-              <input type="date" class="form-control" >
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Sifat</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan sifat..">
-            </div>
-          </div>
+                  default:
+                    # code...
+                    break;
+                }
+              ?>
+            </td>
+          </tr>
+        </table>
 
-          <div class="flex-column flex-fill p-2">
-            <div class="mb-0">
-              <label for="exampleInputEmail1" class="form-label">Unggah File</label>
-              <div class="drop-zone">
-                <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                <input type="file" name="myFile" class="drop-zone__input" Accept="Application/Pdf">
-              </div>
-            </div>
-            <p style="color: red;">*Lampiran/File Wajib Diisi</p>
-          </div>
-        </div>
-      </form>
+        
+        
 
+        
+      </div>
       <div class="ml-2" style="text-align: center;">
         <button type="submit" class="btn btn-primary submit-button" >Submit</button>
         <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
       </div>
       
-  
+      
+       
     </div>
   </div>
-
-
-  <script src="../script/drop-zone.js"></script>
-  
 </body>
 </html>

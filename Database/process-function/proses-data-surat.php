@@ -28,11 +28,21 @@ function data_surat($status,$db){
             echo "<td>".$surat['perihal']."</td>";
             echo "<td>".$surat['tanggal_surat']."</td>";
             echo "<td>".$surat['instansi_pengirim']."</td>";
-            echo "<td>";
-                echo '<button class="delete-button" >Delete</button>';
-                echo '<button class="edit-button" onclick="window.location.href='."'status-surat-edit.php'".'";" >Edit</button>';
-                echo '<button class="status-button" onclick="window.location.href='."'status-surat.php'".';" >Status</button>';    
-            echo "</td>";
+            
+            if($_SESSION['status']=="Pengelola Surat Dinas"){
+                echo "<td>";
+                    echo '<button class="delete-button" >Delete</button>';
+                    echo '<button class="edit-button" onclick="window.location.href='."'status-surat-edit.php'".'";" >Edit</button>';
+                    echo '<button class="status-button" onclick="window.location.href='."'status-surat.php'".';" >Status</button>';    
+                echo "</td>";
+            } else {
+                echo "<td>";
+                    echo '<button class="edit-button" onclick="window.location.href='."'detail-masuk.php'".'";" >Detail</button>';
+                    echo '<button class="status-button" onclick="window.location.href='."'status-surat.php'".';" >Status</button>';    
+                echo "</td>";
+            }
+            
+            
         echo "</tr>";
         $number++;
     }
@@ -42,7 +52,7 @@ function data_surat($status,$db){
 // Status Marker for Every User
 switch($_SESSION['status']){
     case "Pengelola Surat Dinas":
-        $status = "kepdis";  
+        $status = "p_surat_dinas";  
         $total = data_surat($status,$db); 
         break;
 

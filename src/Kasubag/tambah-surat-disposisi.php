@@ -1,3 +1,5 @@
+<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,35 +28,91 @@
 </head>
 <body>
   <div class="my-container">
-    <div class="sidebar">
-      <div id="logo">
-        <img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">
-      </div>
-      <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;">
-            <img src="../../Assets/icon/Category-1.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>
-            </svg>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="surat-masuk.php" class="nav-link nav-button-disable"  style="color: #99B2C6; opacity: 0.5; ">
-            <img src="../../Assets/icon/Chart.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
-            Surat Masuk
-          </a>
-        </li>
-        <li>
-          <a href="surat-tugas.php" class="nav-link  active " style="background-color: #3A36DB;">
-            <img src="../../Assets/icon/Ticket.svg" alt="">
-            <svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>
-            Surat Tugas
-          </a>
-        </li>
-      </ul>
-    </div>
+    <?php
+      switch ($_SESSION['status']) {
+        case 'Pengelola Surat Bidang':
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+
+        case 'Kepala Bidang':
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link active" aria-current="page" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+        
+        default:
+          echo'<div class="sidebar">';
+            echo'<div id="logo">';
+              echo'<img class="bi pe-none me-2 logo-dashboard" src="../../Assets/logo/Logo-Kecil.svg" alt="logo" width="150px" height="102px">';
+            echo'</div>';
+            echo'<ul class="nav nav-pills flex-column mb-auto">';
+              echo'<li class="nav-item">';
+                echo'<a href="dashboard.php" class="nav-link nav-button-disable" aria-current="page" style="color: #99B2C6; opacity: 0.5;" >';
+                  echo'<img src="../../Assets/icon/Category-1.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#home"/>';
+                  echo'</svg>';
+                  echo'Home';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-masuk.php" class="nav-link nav-button-disable" style="color: #99B2C6; opacity: 0.5;">';
+                  echo'<img src="../../Assets/icon/Chart.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Masuk';
+                echo'</a>';
+              echo'</li>';
+              echo'<li>';
+                echo'<a href="surat-tugas.php" class="nav-link active" style="background-color: #3A36DB;">';
+                  echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+            echo'</ul>';
+          echo'</div>';
+          break;
+      }
+    ?>
     
     <div class="main flex-column">
       
@@ -65,44 +123,7 @@
       
       <form class="form-tambah-surat">
         <div class="d-flex" style="display: block;">
-          <div class="flex-column flex-fill p-2" >
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">No Agenda</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no agenda..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">No Surat Masuk</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no surat..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Perihal</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan perihal..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Lampiran</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan jumlah lampiran..">
-            </div>
-          </div>
-
-          <div class="flex-column flex-fill p-2">
-            <div class="mb-3">
-              <label class="form-label">Tanggal Surat</label>
-              <input type="date" class="form-control" >
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Instansi Pengirim</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama instansi..">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Tanggal Diterima</label>
-              <input type="date" class="form-control" >
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Sifat</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan sifat..">
-            </div>
-          </div>
-
+          
           <div class="flex-column flex-fill p-2">
             <div class="mb-0">
               <label for="exampleInputEmail1" class="form-label">Unggah File</label>
@@ -119,7 +140,7 @@
       
       <div class="ml-2" style="text-align: center;">
         <button type="submit" class="btn btn-primary submit-button" >Submit</button>
-        <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-tugas.php';">Kembali</button>
+        <button class="btn btn-primary kembali-button" onclick="window.location.href = 'detail-surat-disposisi.php';">Kembali</button>
       </div>
       
     </div>
