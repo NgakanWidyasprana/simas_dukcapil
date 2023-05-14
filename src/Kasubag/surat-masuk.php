@@ -61,7 +61,11 @@
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Surat Masuk</div>
       </div>
-      <button class="add-surat" onclick="window.location.href = 'tambah-surat-masuk.php';">+ Tambah Surat Masuk</button>  
+      <?php
+        if($_SESSION['status']=="Pengelola Surat Dinas"){
+          echo '<button class="add-surat" onclick="window.location.href ='."tambah-surat-masuk.php".';">+ Tambah Surat Masuk</button>';
+        }
+      ?>  
       <div class="row card-section-surat-masuk">
         <table class="table table-fluid" id="example">
           <thead>

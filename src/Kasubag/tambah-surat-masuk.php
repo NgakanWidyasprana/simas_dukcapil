@@ -8,6 +8,7 @@
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
+  <link rel="stylesheet" href="../style/drop-zone.css">
   <link rel="stylesheet" href="/assets/dist/css/bootstrap.min.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
@@ -18,7 +19,8 @@
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
   <script src="../script/script.js"></script>
-
+  
+  
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,60 +64,65 @@
       </div>
 
       
-      <form class="form-tambah-surat">
+      <form class="form-tambah-surat" Action="../../Database/process-function/proses-upload-surat.php" Method="POST" Enctype="Multipart/Form-Data">
         <div class="d-flex" style="display: block;">
           <div class="flex-column flex-fill p-2" >
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Agenda</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="nomer_agenda" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no agenda..">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Surat Masuk</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="nomer_surat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no surat..">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Perihal</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="perihal"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan perihal..">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Lampiran</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="number" name="lampiran"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan jumlah lampiran..">
             </div>
           </div>
 
           <div class="flex-column flex-fill p-2">
             <div class="mb-3">
               <label class="form-label">Tanggal Surat</label>
-              <input type="date" class="form-control" >
+              <input type="date" name="tanggal_surat" class="form-control" >
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Instansi Pengirim</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="instansi" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama instansi..">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Tanggal Diterima</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="date" name="tanggal_diterima" class="form-control" >
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Sifat</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="sifat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan sifat..">
             </div>
           </div>
 
           <div class="flex-column flex-fill p-2">
-            <div class="mb-3">
+            <div class="mb-0">
               <label for="exampleInputEmail1" class="form-label">Unggah File</label>
-              <input type="text" class="form-control border-dotted" id="exampleInputEmail1" aria-describedby="emailHelp" style="height: 295px; ">
+              <div class="drop-zone">
+                <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                <input type="file" name="myFile" class="drop-zone__input" Accept="Application/Pdf">
+              </div>
             </div>
             <p style="color: red;">*Lampiran/File Wajib Diisi</p>
           </div>
         </div>
-      </form>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <button class="btn btn-primary" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
-      
+        <div class="ml-2" style="text-align: center;">
+          <button type="submit" name="berkas_upload" class="btn btn-primary submit-button" >Submit</button>
+          <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
+        </div>
+      </form>      
     </div>
   </div>
+  <script src="../script/drop-zone.js"></script>
 </body>
 </html>

@@ -51,21 +51,22 @@ function upload_surat($status, $db){
 
         // Variabel Surat
         $nomer_surat = $_POST['nomer_surat'];
-        $sifat_surat = $_POST['sifat'];
-        $judul_surat = $_POST['title'];
-        $lampiran = $_POST['lampiran'];
+        $nomer_agenda = $_POST['nomer_agenda'];
         $perihal = $_POST['perihal'];
-        $tanggal = $_POST['tanggal_surat'];
-        $instansi = $_POST['instansi_pengirim'];
+        $lampiran = $_POST['lampiran'];
+        $tanggal_surat = $_POST['tanggal_surat'];
+        $instansi = $_POST['instansi'];
+        $tanggal_diterima = $_POST['tanggal_diterima'];
+        $sifat_surat = $_POST['sifat'];
 
         // Variabel File
-        $nama_file = str_replace(" ","_",$_FILES['berkas']['name']);
+        $nama_file = str_replace(" ","_",$_FILES['myFile']['name']);
 
         // $ekstensi= Explode('.', $nama_file);
         // $ekstensi_file = Strtolower(End($ekstensi));
         // $size_file = $_FILES['berkas']['Size'];
         
-        $file_tmp = $_FILES['berkas']['tmp_name'];
+        $file_tmp = $_FILES['myFile']['tmp_name'];
 
         // Variabel Location File
         $dir = "../../Assets/File/";
@@ -75,14 +76,14 @@ function upload_surat($status, $db){
         $upload_file = Move_uploaded_file($file_tmp, $conn_dir);
 
         // Upload to Database
-        $sql = "INSERT INTO data_surat (nomer_surat, sifat, title, lampiran, perihal, tanggal_surat, instansi_pengirim, status, link) VALUE ('$nomer_surat', '$sifat_surat', '$judul_surat', '$lampiran', '$perihal', '$tanggal','$instansi','$status','$conn_dir')";
+        $sql = "INSERT INTO data_surat (nomer_surat, nomer_agenda, sifat, lampiran, perihal, tanggal_surat, tanggal_diterima, instansi_pengirim, status, link) VALUE ('$nomer_surat', '$nomer_agenda','$sifat_surat', '$lampiran', '$perihal', '$tanggal_surat', '$tanggal_diterima','$instansi','$status','$conn_dir')";
         $query = mysqli_query($db, $sql);
         $query2 = update_status_surat($nomer_surat, $status, $db);
 
         // apakah query simpan berhasil?
         if( $query && $query2) {
             // kalau berhasil alihkan ke halaman index.php dengan status=g005
-            header('Location: ..\..\index.php?status=g005');
+            header('Location: ..\..\src\Kasubag\surat-masuk.php?status=g005');
             die();
         } else {
             // kalau gagal alihkan ke halaman indek.php dengan status=gagal
