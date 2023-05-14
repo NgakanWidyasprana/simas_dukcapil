@@ -1,4 +1,7 @@
-<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+<?php 
+    include("..\..\Database\connection-function\cek-session.php"); 
+    include("..\..\Database\process-function\get_data_surat.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,106 +120,96 @@
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Detail Surat Masuk</div>
       </div>
-      <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
-        <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
-          <thead>
-            <tr>
-              <th scope="col">No Agenda</th>
-              <th scope="col">Tanggal Masuk</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">001</th>
-              <td>13/03/2023</td>
-            </tr>
-          </tbody>
-        </table>
-  
-        <table class="table">
-          <tr>
-            <th>Hal Surat</th>
-            <td>Praktek Kerja Lapangan</td>
-          </tr>
-          <tr>
-            <th>Instansi Pengirim</th>
-            <td>Universitas Udayana</td>
-          </tr>
-          <tr>
-            <th>Nomor Surat</th>
-            <td>01/DISDUKCAPIL</td>
-          </tr>
-          <tr>
-            <th>Lampiran</th>
-            <td>1</td>
-          </tr>
-          <tr>
-            <th>File Surat</th>
-            <td><a href="#">install</a></td>
-          </tr>
-          
-          
-          <tr>
-            <?php
-              if($_SESSION['status']=="Kepala Dinas"){
-                echo '<th>Disposisikan Kepada</th>';
-              } else {
-                echo '<th>Teruskan</th>';
-              }
-              
-            ?>
-            
-            <td>
-              <?php
-                switch ($_SESSION['status']) {
-                  case 'Kasubag':
-                    echo '<select class="form-select" aria-label="Default select example">';
-                      echo'<option selected>Diteruskan Kepada</option>';
-                      
-                      echo'<option value="1">Sekretaris Dinas</option>';
-                      
-                    echo'</select>';
-                    break;
-
-                  case 'Sekretaris Dinas':
-                    echo '<select class="form-select" aria-label="Default select example">';
-                      echo'<option selected>Diteruskan Kepada</option>';
-                      echo'<option value="1">Kepala Dinas</option>';
-                    echo'</select>';
-                    break;
+        <form action= <?php echo "..\..\Database\process-function\proses-status-update.php?id=".$surat['nomer_surat'];?> method="POST">
+          <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
+            <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
+              <thead>
+                <tr>
+                  <th scope="col">No Agenda</th>
+                  <th scope="col">Tanggal Masuk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><?php echo $surat['nomer_agenda'];?></th>
+                  <td><?php echo $surat['tanggal_surat'];?></td>
+                </tr>
+              </tbody>
+            </table>
+      
+            <table class="table">
+              <tr>
+                <th>Hal Surat</th>
+                <td><?php echo $surat['perihal'];?></td>
+              </tr>
+              <tr>
+                <th>Instansi Pengirim</th>
+                <td><?php echo $surat['instansi_pengirim'];?></td>
+              </tr>
+              <tr>
+                <th>Nomor Surat</th>
+                <td><?php echo $surat['nomer_surat'];?></td>
+              </tr>
+              <tr>
+                <th>Lampiran</th>
+                <td><?php echo $surat['lampiran'];?></td>
+              </tr>
+              <tr>
+                <th>File Surat</th>
+                <?php echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$surat['link'].">Download Surat</a></td>"?>
+              </tr>
+              <tr>
+                <?php
+                  if($_SESSION['status']=="Kepala Dinas"){
+                    echo '<th>Disposisikan Kepada</th>';
+                  } else {
+                    echo '<th>Diteruskan Kepada</th>';
+                  }
                   
-                  case 'Kepala Dinas':
-                    echo '<select class="form-select" aria-label="Default select example">';
-                      echo'<option selected>Disposisikan Kepada</option>';
-                      echo'<option value="1">Kasubag</option>';
-                      echo'<option value="2">Kepala Bidang I</option>';
-                      echo'<option value="3">Kepala Bidang II</option>';
+                ?>
+                
+                <td>
+                  <?php
+                    switch ($_SESSION['status']) {
+                      case 'Kasubag':
+                        echo '<select class="form-select" aria-label="Default select example" name="status">';
+                          echo'<option value="" disabled>Pilih status:</option>';
+                          echo'<option value="kasubag">Sekretaris Dinas</option>';
+                        echo'</select>';
+                        break;
+
+                      case 'Sekretaris Dinas':
+                        echo '<select class="form-select" aria-label="Default select example" name="status">';
+                          echo'<option value="" disabled>Pilih status:</option>';
+                          echo'<option value="sekdis">Kepala Dinas</option>';
+                        echo'</select>';
+                        break;
                       
-                    echo'</select>';
-                    break;
+                      case 'Kepala Dinas':
+                        echo '<select class="form-select" aria-label="Default select example" name="status">';
+                          echo'<option value="" disabled>Pilih status:</option>';
+                          echo'<option value="kasubag">Kasubag</option>';
+                          echo'<option value="kabid">Kepala Bidang</option>';
+                          echo'<option value="sekdis">Sekretaris Dinas</option>';
+                        echo'</select>';
+                        break;
 
-                  default:
-                    # code...
-                    break;
-                }
-              ?>
-            </td>
-          </tr>
-        </table>
-
-        
-        
-
-        
+                      default:
+                        break;
+                    }
+                  ?>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="ml-2" style="text-align: center;">
+            <button type="submit" name="detail-surat" class="btn btn-primary submit-button" >Submit</button>
+          </div>
+        </form>
+        <div class="ml-2" style="text-align: center;">
+            <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
+        </div>
       </div>
-      <div class="ml-2" style="text-align: center;">
-        <button type="submit" class="btn btn-primary submit-button" >Submit</button>
-        <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
-      </div>
-      
-      
-       
-    </div>
   </div>
 </body>
 </html>

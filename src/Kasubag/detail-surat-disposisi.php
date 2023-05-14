@@ -1,4 +1,8 @@
-<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+<?php 
+  include("..\..\Database\connection-function\cek-session.php");
+  include("..\..\Database\process-function\get_data_surat.php");
+  include("..\..\Database\process-function\get_disposisi_data.php"); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -114,155 +118,156 @@
     ?>
     
     <div class="main flex-column">
+
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Detail Surat Disposisi</div>
       </div>
-      <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
-        <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
-          <thead>
+        <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
+          <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
+            <thead>
+              <tr>
+                <th scope="col">No Agenda</th>
+                <th scope="col">Tanggal Masuk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><?php echo $surat['nomer_agenda'];?></th>
+                <td><?php echo $surat['tanggal_surat'];?></td>
+              </tr>
+            </tbody>
+          </table>
+    
+          <table class="table">
             <tr>
-              <th scope="col">No Agenda</th>
-              <th scope="col">Tanggal Masuk</th>
+              <th>Hal Surat</th>
+              <td><?php echo $surat['perihal'];?></td>
             </tr>
-          </thead>
-          <tbody>
             <tr>
-              <th scope="row">001</th>
-              <td>13/03/2023</td>
+              <th>Instansi Pengirim</th>
+              <td><?php echo $surat['instansi_pengirim'];?></td>
             </tr>
-          </tbody>
-        </table>
-  
-        <table class="table">
-          <tr>
-            <th>Hal Surat</th>
-            <td>Praktek Kerja Lapangan</td>
-          </tr>
-          <tr>
-            <th>Instansi Pengirim</th>
-            <td>Universitas Udayana</td>
-          </tr>
-          <tr>
-            <th>Nomor Surat</th>
-            <td>01/DISDUKCAPIL</td>
-          </tr>
-          <tr>
-            <th>Lampiran</th>
-            <td>1</td>
-          </tr>
-          <tr>
-            <th>Ditugaskan Kepada</th>
-            <td>Kasubag</td>
-          </tr>
-          <tr>
-            <th>File Disposisi</th>
-            <td><a href="#">install</a></td>
-          </tr>
-          
-          <?php
-            switch ($_SESSION['status']) {
-              case 'Pengelola Surat':
-                echo'<tr>';
-                  echo'<th>Tugaskan</th>';
-                  echo'<td>';
-                    echo'<select class="form-select" aria-label="Default select example">';
-                      echo'<option selected>Menugaskan Kepada</option>';
-                      echo'<option value="1">Kasubag</option>';
-                      echo'<option value="2">Pengelola Surat Bidang I</option>';
-                      echo'<option value="3">Pengelola Surat Bidang II</option>';
-                    echo'</select>';
-                  echo'</td>';
-                echo'</tr>';
-                break;
-
-              default:
-                # code...
-                break;
-            }
-          ?>
-          <?php
-            switch ($_SESSION['status']) {
-              case 'Sekretaris Dinas':
-                echo'<tr>';
-                  echo'<th>Upload File</th>';
-                  echo'<td>';
-                    echo'<button class="add-surat" onclick="window.location.href='."'tambah-surat-disposisi.php'".';">+ Tambah Disposisi</button>';
-                  echo'</td>';
-                echo'</tr>';
-                break;
-
-              default:
-                # code...
-                break;
-            }
-          ?>
-          
-        </table>
-
-        <?php
-          switch ($_SESSION['status']) {
-            case 'Kepala Bidang':
-              echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
-                echo'<thead style="background-color: #3A36DB; color: azure;">';
+            <tr>
+              <th>Nomor Surat</th>
+              <td><?php echo $surat['nomer_surat'];?></td>
+            </tr>
+            <tr>
+              <th>Lampiran</th>
+              <td><?php echo $surat['lampiran'];?></td>
+            </tr>
+            <tr>
+              <th>Ditugaskan Kepada</th>
+              <td><?php echo $surat['disposisi'];?></td>
+            </tr>
+            <tr>
+              <th>File Disposisi</th>
+                <?php
+                    if($disposisi['link_disposisi']){
+                      echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$disposisi['link_disposisi'].">Download Surat</a></td>";
+                    }else{
+                      echo "<td style='color: #FF0000'> Belum Terdapat Disposisi </td>";
+                    }
+                ?>
+            </tr>
+            
+            <?php
+              switch ($_SESSION['status']) {
+                case 'Pengelola Surat Dinas':
                   echo'<tr>';
-                    echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                    echo'<th>Tugaskan</th>';
+                      echo'<td>';
+                        echo'<select class="form-select" aria-label="Default select example" name="status">';
+                          echo'<option selected disabled>Menugaskan : </option>';
+                          echo'<option value="kasubag">Kasubag</option>';
+                          echo'<option value="p_surat_bid">Pengelola Surat Bidang</option>';
+                        echo'</select>';
+                      echo'</td>';
                   echo'</tr>';
-                echo'</thead>';
-                echo'<tbody>';
-                  echo'<td>';
-                    echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
-                  echo'</td>';
-                echo'</tbody>';
-              echo'</table>';
-              break;
+                  
+                  break;
 
-            case 'Kasubag':
-              echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
-                echo'<thead style="background-color: #3A36DB; color: azure;">';
+                default:
+                  break;
+              }
+            ?>
+            <?php
+              switch ($_SESSION['status']) {
+                case 'Sekretaris Dinas':
                   echo'<tr>';
-                    echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                    echo'<th>Upload File</th>';
+                    echo'<td>';
+                      echo'<button class="add-surat" onclick="window.location.href='."'tambah-surat-disposisi.php?id=".$surat['nomer_surat']."'".';">+ Tambah Disposisi</button>';
+                    echo'</td>';
                   echo'</tr>';
-                echo'</thead>';
-                echo'<tbody>';
-                  echo'<td>';
-                    echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
-                  echo'</td>';
-                echo'</tbody>';
-              echo'</table>';
-              break;
+                  break;
 
-            case 'Kepala Dinas':
-              echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
-                echo'<thead style="background-color: #3A36DB; color: azure;">';
-                  echo'<tr>';
-                    echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
-                  echo'</tr>';
-                echo'</thead>';
-                echo'<tbody>';
-                  echo'<td>';
-                    echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
-                  echo'</td>';
-                echo'</tbody>';
-              echo'</table>';
-              break;
+                default:
+                  break;
+              }
+            ?>
+            
+          </table>
+          <form action= <?php echo "..\..\Database\process-function\proses-laporan.php?id=".$surat['nomer_surat'];?> method="POST">
+            <?php
+              switch ($_SESSION['status']) {
+                case 'Kepala Bidang':
+                  echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
+                    echo'<thead style="background-color: #3A36DB; color: azure;">';
+                      echo'<tr>';
+                        echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                      echo'</tr>';
+                    echo'</thead>';
+                    echo'<tbody>';
+                      echo'<td>';
+                        echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
+                      echo'</td>';
+                    echo'</tbody>';
+                  echo'</table>';
+                  break;
 
-            default:
-              # code...
-              break;
-          }
-        ?>
-        
-        
+                case 'Kasubag':
+                  echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
+                    echo'<thead style="background-color: #3A36DB; color: azure;">';
+                      echo'<tr>';
+                        echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                      echo'</tr>';
+                    echo'</thead>';
+                    echo'<tbody>';
+                      echo'<td>';
+                        echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
+                      echo'</td>';
+                    echo'</tbody>';
+                  echo'</table>';
+                  break;
 
-        
-      </div>
+                case 'Kepala Dinas':
+                  echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
+                    echo'<thead style="background-color: #3A36DB; color: azure;">';
+                      echo'<tr>';
+                        echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                      echo'</tr>';
+                    echo'</thead>';
+                    echo'<tbody>';
+                      echo'<td>';
+                        echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
+                      echo'</td>';
+                    echo'</tbody>';
+                  echo'</table>';
+                  break;
+
+                default:
+                  break;
+              }
+            ?>
+            <div class="ml-2" style="text-align: center;">
+                <button type="submit" name="laporan_update" class="btn btn-primary submit-button" >Submit</button>
+            </div>
+          </form>
+        </div>
       <div class="ml-2" style="text-align: center;">
-        <button type="submit" class="btn btn-primary submit-button" >Submit</button>
         <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-tugas.php';">Kembali</button>
       </div>
       
-      
-       
     </div>
   </div>
 </body>
