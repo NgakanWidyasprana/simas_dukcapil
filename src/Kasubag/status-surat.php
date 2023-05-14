@@ -59,7 +59,7 @@
     
     <div class="main flex-column">
       
-      <div class="title-section d-flex flex-row" style="margin-bottom: 40px;">
+      <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Status Surat</div>
       </div>
 
@@ -99,7 +99,7 @@
           </tr>
           <tr>
             <th>File</th>
-            <td><button>install</button></td>
+            <td><a href="#">install</a></td>
           </tr>
           <tr>
             <th>Telah Disetujui</th>

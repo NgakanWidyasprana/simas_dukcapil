@@ -1,272 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard-Kasubag</title>
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../Assets/js/color-modes.js"></script>
 
-  <!-- style -->
-  <link rel="stylesheet" href="../style/kasubag.css">
-  <link rel="stylesheet" href="/assets/dist/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- script -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-  <script src="/src/script/script.js"></script>
+    <title>Authentication</title>
+    <link href="../Assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
-<body>
-  <div class="">
-    <table class="table table-fluid" id="example">
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nomor Surat</th>
-          <th scope="col">Sifat</th>
-          <th scope="col">Lampiran</th>
-          <th scope="col">Hal</th>
-          <th scope="col">Tanggal Surat</th>
-          <th scope="col">Instansi Pengirim</th>
-          <th scope="col">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">001</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">002</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>070/01/ DISDUKCAPIL</td>
-          <td>Biasa</td>
-          <td>1</td>
-          <td>Kerja Praktik</td>
-          <td>16/03/2023</td>
-          <td>Universitas Udayana</td>
-          <td>
-            <button>1</button>
-            <button>2</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Custom styles for this template -->
+    <link href="../style/style.css" rel="stylesheet">
     
+  </head>
+  <body>
+
+
+<main class="d-flex flex-nowrap" style="background-color: #F1F4FA;">
+  
+  
+  <img src="/Assets/pict/disdukcapil.gif" alt="" style="width:1920px; opacity: 50%;">
+  <div class="welcome title-welcome">Selamat Datang di</div>
+  <div class="centered title-website">SISMAS</div>
+  <div class="title-website-text">
+    <div>Sistem</div>
+    <div>Manajemen</div>
+    <div>Surat</div>
   </div>
-</body>
+
+</main>
+
+
+
+    <script src="../Assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
 </html>

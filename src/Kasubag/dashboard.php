@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
   
-
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +84,34 @@
       </div>
       
       <div class="rectangle-announcement card" style="height: 400px;" >
-        <div class="petugas">Pengumuman</div>
+        <div class="petugas" style="padding: 5px; margin: 10px 0 10px 0;">Pengumuman</div>
+        <div class="p-2">
+          <table class="table table-bordered" style="text-align: center; margin-bottom: 0;">
+            <thead>
+              <tr>
+                <th scope="col" style="color: #000000; background-color: #ededed;">Informasi Surat Pengumuman</th>
+              </tr>
+            </thead>
+            
+          </table>
+  
+          <table class="table table-bordered" style="text-align: center; padding: 5px; color: #000000;">
+            <thead>
+              <tr>
+                <th>No Surat</th>
+                <th>Perihal</th>
+                <th>File</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>Kerja Bakti Lingkungan</td>
+                <td><a href="#">install</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
