@@ -45,6 +45,13 @@ body {
   padding: 15px;
 }
 
+.divider-thing{
+  content: "";
+  height: 1px;
+  background-color: #b9b9b9;
+  display: block;
+}
+
 
 /* dashboard */
 .logo-dashboard{

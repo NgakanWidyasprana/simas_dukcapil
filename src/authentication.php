@@ -37,9 +37,14 @@
                 <input type="username" class="form-control" id="inputUsername" placeholder="Username" name="username" style="background: #F1F4FA; border-color: #F1F4FA;">
                 
             </div>
-            <div class="mb-3">
+            <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" style="background: #F1F4FA; border-color: #F1F4FA;">
+            </div>
+            <div class="d-flex flex-row mb-4" >
+              <a href="lupa-password.php" >lupa password?</a>
+              <div style="margin-left:20px; margin-right:20px">or</div>
+              <a href="../Form/form-register.php">buat akun</a>
             </div>
             <button type="submit" class="btn btn-primary button" name="submit">Login</button>
           </form>
