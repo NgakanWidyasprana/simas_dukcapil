@@ -2,7 +2,7 @@
     include ("..\connection-function\config.php");
 
     if(isset($_POST['submit'])){
-        $NIP = $_POST['nip'];
+        $NIP = $_POST['nik'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = md5($_POST['password']);
@@ -13,7 +13,7 @@
         $check_NIP_result = mysqli_query($db, $check_NIP_sql);
 
         if($check_NIP_result->num_rows > 0){
-            header('Location: ..\..\Form\form-login.php?status=g006');
+            header('Location: ..\..\src\authentication.php?status=g006');
             die();
         }else{
             // Validasi Password
@@ -29,7 +29,7 @@
 
                     // Validasi Input
                     if($result){
-                        header('Location: ..\..\Form\form-login.php?status=sukses');
+                        header('Location: ..\..\src\authentication.php?status=sukses');
                         die();
                     }else{
                         header('Location: ..\..\Form\form-register.php?status=g001');

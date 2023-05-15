@@ -50,6 +50,14 @@
                   echo'Surat Tugas';
                 echo'</a>';
               echo'</li>';
+              echo '<hr class="divider-thing"/>';
+              echo'<li>';
+                echo'<a href="../../Database/process-function/proses-logout.php" class="nav-link nav-button-disable" style="color: #D11A2A;margin-left: 30px;">';
+                  echo'<img src="../../Assets/icon/Document-Red.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Logout';
+                echo'</a>';
+              echo'</li>';
             echo'</ul>';
           echo'</div>';
           break;
@@ -73,6 +81,14 @@
                   echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
                   echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
                   echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+              echo '<hr class="divider-thing"/>';
+              echo'<li>';
+                echo'<a href="../../Database/process-function/proses-logout.php" class="nav-link nav-button-disable" style="color: #D11A2A;margin-left: 30px;">';
+                  echo'<img src="../../Assets/icon/Document-Red.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Logout';
                 echo'</a>';
               echo'</li>';
             echo'</ul>';
@@ -105,6 +121,14 @@
                   echo'<img src="../../Assets/icon/Ticket.svg" alt="">';
                   echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
                   echo'Surat Tugas';
+                echo'</a>';
+              echo'</li>';
+              echo '<hr class="divider-thing"/>';
+              echo'<li>';
+                echo'<a href="../../Database/process-function/proses-logout.php" class="nav-link nav-button-disable" style="color: #D11A2A;margin-left: 30px;">';
+                  echo'<img src="../../Assets/icon/Document-Red.svg" alt="">';
+                  echo'<svg class="bi pe-none me-2" width="1" height="1"><use xlink:href="#speedometer2"/></svg>';
+                  echo'Logout';
                 echo'</a>';
               echo'</li>';
             echo'</ul>';
@@ -172,9 +196,7 @@
                   case 'Kasubag':
                     echo '<select class="form-select" aria-label="Default select example">';
                       echo'<option selected>Diteruskan Kepada</option>';
-                      
                       echo'<option value="1">Sekretaris Dinas</option>';
-                      
                     echo'</select>';
                     break;
 
@@ -191,7 +213,6 @@
                       echo'<option value="1">Kasubag</option>';
                       echo'<option value="2">Kepala Bidang I</option>';
                       echo'<option value="3">Kepala Bidang II</option>';
-                      
                     echo'</select>';
                     break;
 
