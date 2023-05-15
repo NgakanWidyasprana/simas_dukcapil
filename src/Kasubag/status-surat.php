@@ -1,4 +1,7 @@
-<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+<?php 
+    include("..\..\Database\connection-function\cek-session.php");
+    include("..\..\Database\process-function\get_data_surat.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -154,8 +157,8 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row">001</th>
-              <td>13/03/2023</td>
+              <th scope="row"><?php echo $surat['nomer_agenda'];?></th>
+              <td><?php echo $surat['tanggal_surat'];?></td>
             </tr>
           </tbody>
         </table>
@@ -163,30 +166,62 @@
         <table class="table">
           <tr>
             <th>Hal Surat</th>
-            <td>Praktek Kerja Lapangan</td>
+            <td><?php echo $surat['perihal'];?></td>
           </tr>
           <tr>
             <th>Instansi Pengirim</th>
-            <td>Universitas Udayana</td>
+            <td><?php echo $surat['instansi_pengirim'];?></td>
           </tr>
           <tr>
             <th>Nomor Surat</th>
-            <td>01/DISDUKCAPIL</td>
+            <td><?php echo $surat['nomer_surat'];?></td>
           </tr>
           <tr>
             <th>Lampiran</th>
-            <td>1</td>
+            <td><?php echo $surat['lampiran'];?></td>
           </tr>
           <tr>
             <th>File</th>
-            <td><a href="#">install</a></td>
+            <?php echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$surat['link'].">Download Surat</a></td>"?>
           </tr>
           <tr>
             <th>Telah Disetujui</th>
             <td>
-              <div>kasubag</div>
-              <div>sekretaris</div>
-              <div>kepala dinas</div>
+              <?php
+                switch($_SESSION['status']){
+                    case 'Pengelola Surat Dinas':
+                      if($surat['kasubag']==1){
+                        echo "<div style='color: #00FF00'>Kasubag</div>";
+                      }else{
+                        echo "<div style='color: #FF0000'>Kasubag</div>";
+                      }
+                      break;
+
+                    case 'Kasubag':
+                      if($surat['sekdis']==1){
+                        echo "<div style='color: #00FF00'>Sekretaris Dinas</div>";
+                      }else{
+                        echo "<div style='color: #FF0000'>Sekretaris Dinas</div>";
+                      }
+                      break;
+                      
+                    case 'Sekretaris Dinas':
+                      if($surat['kepdis']==1 || $surat['kepdis']==2){
+                        echo "<div style='color: #00FF00'>Kepala Dinas</div>";
+                      }else{
+                        echo "<div style='color: #FF0000'>Kepala Dinas</div>";
+                      }
+                      break;
+
+                    case 'Kepala Dinas':
+                      if($surat['kepdis']==1){
+                        echo "<div style='color: #00FF00'>Sudah Dibuatkan Disposisi</div>";
+                      }else{
+                        echo "<div style='color: #FF0000'>Belum Dibuatkan Disposisi</div>";
+                      }
+                      break; 
+                }
+              ?>
             </td>
           </tr>
         </table>

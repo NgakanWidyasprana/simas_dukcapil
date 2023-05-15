@@ -200,14 +200,12 @@
 
         <div class="ml-2" style="text-align: center;">
           <button type="submit" name="berkas_upload" class="btn btn-primary submit-button" >Submit</button>
-          
         </div>
       </form>  
       
       <div class="ml-2" style="text-align: center; position: absolute">
-          
-          <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
-        </div>
+        <button class="btn btn-primary kembali-button" onclick="window.location.href = 'surat-masuk.php';">Kembali</button>
+      </div>
     </div>
   </div>
   <script src="../script/drop-zone.js"></script>

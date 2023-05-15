@@ -1,4 +1,8 @@
-<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+<?php 
+  include("..\..\Database\connection-function\cek-session.php");
+  include("..\..\Database\process-function\proses-suratmasuk-dashboard.php");
+  include("..\..\Database\process-function\proses-disposisi-dashboard.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -159,8 +163,7 @@
             break;
         }
       ?>
-      
-      
+
       <div class="rectangle-announcement card" style="height: 400px;" >
         <div class="petugas" style="padding: 5px; margin: 10px 0 10px 0;">Pengumuman</div>
         <div class="p-2">
@@ -182,11 +185,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>01</td>
-                <td>Kerja Bakti Lingkungan</td>
-                <td><a href="#">install</a></td>
-              </tr>
+                <?php include("..\..\Database\process-function\proses-information-dashboard.php");?>
             </tbody>
           </table>
         </div>

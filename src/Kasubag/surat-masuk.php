@@ -160,7 +160,7 @@
         <table class="table table-fluid" id="example">
           <thead>
             <tr>
-              <th scope="col">No</th>
+              <th scope="col">Nomor Agenda</th> 
               <th scope="col">Nomor Surat</th>
               <th scope="col">Sifat</th>
               <th scope="col">Lampiran</th>

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tambah Surat Disposisi Page-Kasubag</title>
+  <title>Tambah Surat Disposisi</title>
 
   <!-- style -->
   <link rel="stylesheet" href="../style/kasubag.css">
@@ -144,26 +144,26 @@
         <div class="text-top title-page">Tambah Surat Disposisi</div>
       </div>
 
-      
-      <form class="form-tambah-surat">
+      <form class="form-tambah-surat" Action= <?php echo "../../Database/process-function/proses-disposisi-surat.php?id=".$_GET['id'];?> Method="POST" Enctype="Multipart/Form-Data">
         <div class="d-flex" style="display: block;">
-          
           <div class="flex-column flex-fill p-2">
             <div class="mb-0">
               <label for="exampleInputEmail1" class="form-label">Unggah File</label>
               <div class="drop-zone">
                 <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                <input type="file" name="myFile" class="drop-zone__input">
+                <input type="file" name="myFile" class="drop-zone__input" Accept="Application/Pdf">
               </div>  
             </div>
             <p style="color: red;">*Lampiran/File Wajib Diisi</p>
           </div>
         </div>
+        <div class="ml-2" style="text-align: center;">
+          <button type="submit" name="berkas_upload" class="btn btn-primary submit-button" >Submit</button>
+        </div>
       </form>
 
       
       <div class="ml-2" style="text-align: center;">
-        <button type="submit" class="btn btn-primary submit-button" >Submit</button>
         <button class="btn btn-primary kembali-button" onclick="window.location.href = 'detail-surat-disposisi.php';">Kembali</button>
       </div>
       

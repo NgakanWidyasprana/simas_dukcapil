@@ -11,36 +11,36 @@ function update_status_surat($kode_surat, $status, $db){
             $query = mysqli_query($db, $sql);
             return $query;
             break;
-        case "kasubag":
-            $sql = "INSERT INTO status_surat (kode_surat, kasubag) VALUE ('$kode_surat', 1)";
-            $query = mysqli_query($db, $sql);
-            return $query; 
-            break;
-        case "sekdis":
-            $sql = "INSERT INTO status_surat (kode_surat, sekdis) VALUE ('$kode_surat', 1)";
-            $query = mysqli_query($db, $sql);
-            return $query;
-            break;
-        case "kepdis":
-            $sql = "INSERT INTO status_surat (kode_surat, kepdis) VALUE ('$kode_surat', 1)";
-            $query = mysqli_query($db, $sql);
-            return $query;
-            break;
-        case "p_surat_bidang":
-            $sql = "INSERT INTO status_surat (kode_surat, p_surat_bidang) VALUE ('$kode_surat', 1)";
-            $query = mysqli_query($db, $sql);
-            return $query;
-            break;
-        case "kabid":
-            $sql = "INSERT INTO status_surat (kode_surat, kabid) VALUE ('$kode_surat', 1)";
-            $query = mysqli_query($db, $sql);
-            return $query;
-            break;
-        case "staff":
-            $sql = "INSERT INTO status_surat (kode_surat, staff) VALUE ('$kode_surat', 1)";
-            $query = mysqli_query($db, $sql);
-            return $query;
-            break;
+        // case "kasubag":
+        //     $sql = "INSERT INTO status_surat (kode_surat, kasubag) VALUE ('$kode_surat', 1)";
+        //     $query = mysqli_query($db, $sql);
+        //     return $query; 
+        //     break;
+        // case "sekdis":
+        //     $sql = "INSERT INTO status_surat (kode_surat, sekdis) VALUE ('$kode_surat', 1)";
+        //     $query = mysqli_query($db, $sql);
+        //     return $query;
+        //     break;
+        // case "kepdis":
+        //     $sql = "INSERT INTO status_surat (kode_surat, kepdis) VALUE ('$kode_surat', 1)";
+        //     $query = mysqli_query($db, $sql);
+        //     return $query;
+        //     break;
+        // case "p_surat_bidang":
+        //     $sql = "INSERT INTO status_surat (kode_surat, p_surat_bidang) VALUE ('$kode_surat', 1)";
+        //     $query = mysqli_query($db, $sql);
+        //     return $query;
+        //     break;
+        // case "kabid":
+        //     $sql = "INSERT INTO status_surat (kode_surat, kabid) VALUE ('$kode_surat', 1)";
+        //     $query = mysqli_query($db, $sql);
+        //     return $query;
+        //     break;
+        // case "staff":
+        //     $sql = "INSERT INTO status_surat (kode_surat, staff) VALUE ('$kode_surat', 1)";
+        //     $query = mysqli_query($db, $sql);
+        //     return $query;
+        //     break;
         default:
             return 0;
     }
@@ -101,35 +101,35 @@ switch($_SESSION['status']){
         upload_surat($status,$db); 
         break;
 
-    case "Kasubag":
-        $status = "kasubag"; 
-        upload_surat($status,$db); 
-        break;
+    // case "Kasubag":
+    //     $status = "kasubag"; 
+    //     upload_surat($status,$db); 
+    //     break;
 
-    case "Sekretaris Dinas":
-        $status = "sekdis"; 
-        upload_surat($status,$db); 
-        break;
+    // case "Sekretaris Dinas":
+    //     $status = "sekdis"; 
+    //     upload_surat($status,$db); 
+    //     break;
 
-    case "Kepala Dinas":
-        $status = "kepdis"; 
-        upload_surat($status,$db); 
-        break;
+    // case "Kepala Dinas":
+    //     $status = "kepdis"; 
+    //     upload_surat($status,$db); 
+    //     break;
 
-    case "Pengelola Surat Bidang":
-        $status = "p_surat_bidang"; 
-        upload_surat($status,$db); 
-        break;
+    // case "Pengelola Surat Bidang":
+    //     $status = "p_surat_bidang"; 
+    //     upload_surat($status,$db); 
+    //     break;
 
-    case "Kepala Bidang":
-        $status = "kabid"; 
-        upload_surat($status,$db); 
-        break;
+    // case "Kepala Bidang":
+    //     $status = "kabid"; 
+    //     upload_surat($status,$db); 
+    //     break;
 
-    case "Staff":
-        $status = "staff"; 
-        upload_surat($status,$db); 
-        break;
+    // case "Staff":
+    //     $status = "staff"; 
+    //     upload_surat($status,$db); 
+    //     break;
     
     default:
         echo "level users tidak ditemukan!";
