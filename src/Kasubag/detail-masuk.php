@@ -284,7 +284,25 @@
             </table>
           </div>
           <div class="ml-2" style="text-align: center;">
-            <button type="submit" name="detail-surat" class="btn btn-primary submit-button" >Submit</button>
+            <?php
+              switch ($_SESSION['status']){
+                  case 'Kasubag':
+                    if($surat['kasubag'] == 0){
+                        echo '<button type="submit" name="detail-surat" class="btn btn-primary submit-button" >Submit</button>';
+                    }
+                    break;
+                  case 'Sekretaris Dinas':
+                    if($surat['sekdis'] == 0){
+                      echo '<button type="submit" name="detail-surat" class="btn btn-primary submit-button" >Submit</button>';
+                    }
+                    break;
+                  case 'Kepala Dinas':
+                    if($surat['kepdis'] == 0){
+                      echo '<button type="submit" name="detail-surat" class="btn btn-primary submit-button" >Submit</button>';
+                    }
+                    break;
+              }
+            ?>
           </div>
         </form>
         <div class="ml-2" style="text-align: center;">

@@ -200,6 +200,8 @@
                     case 'Kasubag':
                       if($surat['sekdis']==1){
                         echo "<div style='color: #00FF00'>Sekretaris Dinas</div>";
+                      }elseif($surat['kasubag']==0){
+                        echo "<div style='color: #FF0000'>Belum Diteruskan</div>";
                       }else{
                         echo "<div style='color: #FF0000'>Sekretaris Dinas</div>";
                       }
@@ -208,8 +210,10 @@
                     case 'Sekretaris Dinas':
                       if($surat['kepdis']==1 || $surat['kepdis']==2){
                         echo "<div style='color: #00FF00'>Kepala Dinas</div>";
+                      }elseif($surat['sekdis']==0){
+                        echo "<div style='color: #FF0000'>Belum Diteruskan</div>";
                       }else{
-                        echo "<div style='color: #FF0000'>Kepala Dinas</div>";
+                        echo "<div style='color: #FF0000'>Kepala Dinas</div>"; 
                       }
                       break;
 
