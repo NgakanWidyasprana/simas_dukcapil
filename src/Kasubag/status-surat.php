@@ -218,10 +218,12 @@
                       break;
 
                     case 'Kepala Dinas':
-                      if($surat['kepdis']==1){
+                      if($surat['kepdis']==0){
                         echo "<div style='color: #00FF00'>Sudah Dibuatkan Disposisi</div>";
+                      }elseif($surat['kepdis']==1){
+                        echo "<div style='color: #00FF00'>Sudah Ditugaskan</div>";
                       }else{
-                        echo "<div style='color: #FF0000'>Belum Dibuatkan Disposisi</div>";
+                        echo "<div style='color: #FF0000'>Proses Penugasan</div>";
                       }
                       break; 
                 }

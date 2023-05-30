@@ -14,12 +14,11 @@ $no_surat = $_GET['id'];
 // Data Surat Utama
 $sql = "SELECT * FROM data_disposisi WHERE nomer_disposisi='$no_surat'";
 $query = mysqli_query($db, $sql);
-$disposisi = mysqli_fetch_assoc($query);
 
 // jika data yang di-edit tidak ditemukan
-if( mysqli_num_rows($query) < 1 ){
-    die("data tidak ditemukan...");
+if( mysqli_num_rows($query) != 0){
+    $disposisi = mysqli_fetch_assoc($query);
+}else{
+    $disposisi = NULL;
 }
-
-
 ?>

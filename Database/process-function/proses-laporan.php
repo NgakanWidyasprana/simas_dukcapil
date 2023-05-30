@@ -9,7 +9,7 @@ if(isset($_POST['laporan_update'])){
     $sql="UPDATE data_disposisi SET laporan='$laporan', penugasan='selesai' WHERE nomer_disposisi = '$no_surat'";
     $query = mysqli_query($db, $sql);
 
-    $update_status ="UPDATE all_data_surat SET disposisi='selesai' WHERE nomer_surat= '$no_surat'";
+    $update_status ="UPDATE data_surat SET status='selesai' WHERE nomer_surat= '$no_surat'";
     $query_2 = mysqli_query($db, $update_status);
 
 

@@ -144,7 +144,7 @@
       <div class="title-section d-flex flex-row" style="margin-bottom: 10px;">
         <div class="text-top title-page">Detail Surat Masuk</div>
       </div>
-        <form action= <?php echo "..\..\Database\process-function\proses-status-update.php?id=".$surat['nomer_surat'];?> method="POST">
+        <form action= <?php echo "..\..\Database\process-function\proses-status-update.php?id=".$surat['nomer_surat'];?> method="POST" Enctype="Multipart/Form-Data">
           <div class="content-status-surat" style="padding: 20px; margin: 0 20px 0 20px;">
             <table class="table" style="text-align: center; background-color: #3A36DB; color: azure; border-radius: 5px;">
               <thead>
@@ -173,7 +173,7 @@
               <tr>
                 <th>Nomor Surat</th>
                 <td><?php echo $surat['nomer_surat'];?></td>
-              </tr>
+              </tr> 
               <tr>
                 <th>Lampiran</th>
                 <td><?php echo $surat['lampiran'];?></td>
@@ -184,40 +184,46 @@
               </tr>
 
               <?php
+              /*
                 switch ($_SESSION['status']) {
                   case 'Kepala Dinas':
                     echo'<tr>';
                       echo'<th>File Disposisi</th>';
-                      echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$surat['link'].">Download Disposisi</a></td>";
+                      echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$surat['link_disposisi'].">Download Disposisi</a></td>";
                     echo'</tr>';
                     break;
                   default:
                     break;
                 }
+              */
               ?>
               
               <?php
-                switch ($_SESSION['status']) {
-                  case 'Sekretaris Dinas':
+                $link = $surat['penugasan'];
+                if($link!=NULL){
                     echo'<tr>';
-                      echo'<th>Upload File Disposisi</th>';
-                      echo'<td>';
-                        echo '<div class="drop-zone">';
-                          echo'<input type="file" name="myFile" class="drop-zone__input" Accept="Application/Pdf">';
-                        echo'</div>';
-                      echo'</td>';
-                    echo'</tr>';
-                    break;
+                      echo'<th>File Disposisi</th>';
+                      echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$surat['link_disposisi'].">Download Disposisi</a></td>";
+                    echo'</tr>';  
+                }else{
+                  switch ($_SESSION['status']){
+                    case 'Sekretaris Dinas':
+                      echo'<tr>';
+                        echo'<th>Upload File Disposisi</th>';
+                        echo'<td>';
+                          echo '<div class="drop-zone">';
+                            echo'<input type="file" name="myFile" class="drop-zone__input" Accept="Application/Pdf">';
+                          echo'</div>';
+                        echo'</td>';
+                      echo'</tr>';
+                      break;
 
-                  default:
-                    break;
+                    default:
+                      break;
+                  }
                 }
                 
               ?>
-
-
-                
-              
               <?php
                 /*switch ($_SESSION['status']) {
                   case 'Sekretaris Dinas':
@@ -264,9 +270,12 @@
                         break;
                       
                       case 'Kepala Dinas':
-                        echo'<input type="text" name="nomer_agenda" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Disposisikan kepada..">';
-                        
 
+                        if($surat['kepdis']=2 || $surat['kepdis']=1){
+                          echo'<input type="text" disabled name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="'.$surat['disposisi'].'">';
+                        }else{
+                          echo'<input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Disposisikan kepada..">';
+                        }
                         // echo '<select class="form-select" aria-label="Default select example" name="status">';
                         //   echo'<option value="" disabled>Pilih status:</option>';
                         //   echo'<option value="kasubag">Kasubag</option>';
