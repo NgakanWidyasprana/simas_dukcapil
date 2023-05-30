@@ -1,5 +1,12 @@
-<?php include("..\Database\connection-function\config.php"); ?>
-<?php include("..\Database\connection-function\cek-session.php"); ?>
+<?php 
+        
+    include("..\Database\connection-function\config.php"); 
+
+    session_start();
+    $_SESSION["admin"]=$_GET['status']; 
+?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -9,11 +16,12 @@
 
 <body>
     <header>
+        <h3>Selamat Datang, <?php echo $_SESSION['admin'];?> </h3>
         <h3>Pegawai Yang Sudah Mendaftar</h3>
     </header>
 
     <nav>
-        <a href="form-daftar.php">[+] Tambah Baru</a>
+        <a href="form-daftar.php">[+] Tambah Data</a>
         <h12> || </h12>
         <a href="..\index.php"> Home </a>
     </nav>

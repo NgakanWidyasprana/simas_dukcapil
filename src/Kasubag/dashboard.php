@@ -170,7 +170,7 @@
           <table class="table table-bordered" style="text-align: center; margin-bottom: 0;">
             <thead>
               <tr>
-                <th scope="col" style="color: #000000; background-color: #ededed;">Informasi Surat Pengumuman</th>
+                <th scope="col" style="color: #000000; background-color: #ededed;">Informasi Surat Masuk Terbaru</th>
               </tr>
             </thead>
             

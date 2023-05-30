@@ -1,4 +1,10 @@
-<?php include("..\Database\connection-function\cek-session.php"); ?>
+<?php 
+
+    if(!$_SESSION['admin']="Admin Ganteng"){
+        header("Location: ../index.php");
+    }
+
+?>
 
 <!DOCTYPE html>
 <html>

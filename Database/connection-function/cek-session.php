@@ -3,7 +3,7 @@
 
     session_start();
     if(!isset($_SESSION['username'])){
-        header ('Location: src\authentication.php');
+        header ('Location: ..\..\src\authentication.php?status=009');
         die();
     }else{
         $username = $_SESSION['username'];
@@ -15,6 +15,9 @@
             $data = mysqli_fetch_assoc($result);
             $_SESSION['users'] = $data['Nama User'];
             $_SESSION['status'] = $data['Status Users'];
+        }else{
+            header ('Location: ..\..\src\authentication.php?status==010');
+            die(); 
         }
     }
     // header("Location: Form/form-login.php?status=g007");

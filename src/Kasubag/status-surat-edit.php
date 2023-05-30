@@ -1,4 +1,9 @@
-<?php include("..\..\Database\connection-function\cek-session.php"); ?>
+<?php 
+
+include("..\..\Database\connection-function\cek-session.php"); 
+include("..\..\Database\process-function\get_data_surat.php");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -151,38 +156,38 @@
           <div class="flex-column flex-fill p-2" >
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Agenda</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no agenda..">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no agenda.." value= <?php echo $surat['nomer_agenda'];?>>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Surat Masuk</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no surat..">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan no surat.. " value= <?php echo $surat['nomer_surat'];?>>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Perihal</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan perihal..">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan perihal.." value= '<?php echo $surat['perihal'];?>'>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Lampiran</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan jumlah lampiran..">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan jumlah lampiran.." value= <?php echo $surat['lampiran'];?>>
             </div>
           </div>
 
           <div class="flex-column flex-fill p-2">
             <div class="mb-3">
               <label class="form-label">Tanggal Surat</label>
-              <input type="date" class="form-control" >
+              <input type="date" class="form-control" value= <?php echo $surat['tanggal_surat'];?>>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Instansi Pengirim</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama instansi..">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan jumlah lampiran..." value= '<?php echo $surat['instansi_pengirim'];?>'>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Tanggal Diterima</label>
-              <input type="date" class="form-control" >
+              <input type="date" class="form-control" value= <?php echo $surat['tanggal_diterima'];?>>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Sifat</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan sifat..">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan sifat.." value= <?php echo $surat['sifat'];?>>
             </div>
           </div>
 

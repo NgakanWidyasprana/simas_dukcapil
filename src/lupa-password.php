@@ -15,17 +15,17 @@
 <body>
     <div class="background">
         <div class="container">
-            <form action="..\Database\process-function\proses-register.php" method="POST" class="login-email">
+            <form action="..\Database\process-function\proses-forget-password.php" method="POST" class="login-email">
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Lupa Password</p>
                 <div class="input-group">
                     <input type="text" placeholder="NIK" name="nik">
                 </div>
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <input type="text" placeholder="Username" name="username">
                 </div>
                 <div class="input-group">
                     <input type="email" placeholder="Email" name="email">
-                </div>
+                </div> -->
                 <div class="input-group">
                     <input type="password" placeholder="Change Password" name="password">
                 </div>

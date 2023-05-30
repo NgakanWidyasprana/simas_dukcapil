@@ -10,7 +10,7 @@
         }
         
         if($_GET['status']=='g002'){
-            echo "<script>alert('Woops! Email Sudah Terdaftar.')</script>";
+            echo "<script>alert('Woops! Email/Username Sudah Terdaftar.')</script>";
         }
 
         if($_GET['status']=='g003'){
@@ -27,6 +27,17 @@
 
         if($_GET['status']=='g007'){
             echo "<script>alert('Akun anda belum terdaftar, silahkan kontak admin!')</script>";
+        }
+
+        if($_GET['status']=='g008'){
+            echo "<script>alert('NIK tidak terdaftar dalam database!!')</script>";
+        }
+
+        if($_GET['status']=='g009'){
+            echo "<script>alert('Session error, session tidak ada/kosong')</script>";
+        }
+        if($_GET['status']=='g010'){
+            echo "<script>alert('Session error, session tidak sesuai database')</script>";
         }
     }
     

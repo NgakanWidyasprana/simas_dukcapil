@@ -1,5 +1,12 @@
-<?php include("..\Database\connection-function\cek-session.php"); ?>
-<?php include("..\Database\process-function\get_old_data.php");?>
+<?php 
+
+    if(!$_SESSION['admin']="Admin Ganteng"){
+        header("Location: ../index.php");
+    }
+
+    include("..\Database\process-function\get_old_data.php");
+
+?>
 
 <!DOCTYPE html>
 <html>

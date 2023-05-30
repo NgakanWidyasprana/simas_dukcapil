@@ -10,7 +10,7 @@
  
     <link rel="stylesheet" href="../Assets/style/style.css">
  
-    <title>Niagahoster Register</title>
+    <title>SISMAS REGISTER</title>
 </head>
 <body>
     <div class="background">

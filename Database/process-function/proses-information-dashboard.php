@@ -5,9 +5,9 @@ include("..\..\Database\connection-function\config.php");
 function if_surat($status,$db){
 
     if($status == "disposisi"){
-        $sql = "SELECT * FROM all_data_surat WHERE p_surat_dinas = 1 ";
+        $sql = "SELECT * FROM all_data_surat WHERE p_surat_dinas = 1 ORDER BY tanggal_surat DESC LIMIT 3";
     }else{
-        $sql = "SELECT * FROM all_data_surat WHERE $status = 1";
+        $sql = "SELECT * FROM all_data_surat WHERE $status = 1 ORDER BY tanggal_surat DESC LIMIT 3";
     }
     
     $query = mysqli_query($db, $sql);
@@ -27,7 +27,7 @@ function if_surat($status,$db){
             // //echo "</td>";
             echo "<td>".$surat['nomer_surat']."</td>";
             echo "<td>".$surat['perihal']."</td>";
-            echo '<td><a href= ..\Database\process-function\proses-download-surat.php?link='.$surat['link'].">Download</a></td>";
+            echo '<td><a href= ..\..\Database\process-function\proses-download-surat.php?link='.$surat['link'].">Download</a></td>";
             
         echo "</tr>";
     }
