@@ -182,6 +182,60 @@
                 <th>File Surat</th>
                 <?php echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$surat['link'].">Download Surat</a></td>"?>
               </tr>
+
+              <?php
+                switch ($_SESSION['status']) {
+                  case 'Kepala Dinas':
+                    echo'<tr>';
+                      echo'<th>File Disposisi</th>';
+                      echo "<td><a href= ..\..\Database\process-function\proses-download-surat.php?link=".$surat['link'].">Download Disposisi</a></td>";
+                    echo'</tr>';
+                    break;
+                  default:
+                    break;
+                }
+              ?>
+              
+              <?php
+                switch ($_SESSION['status']) {
+                  case 'Sekretaris Dinas':
+                    echo'<tr>';
+                      echo'<th>Upload File Disposisi</th>';
+                      echo'<td>';
+                        echo '<div class="drop-zone">';
+                          echo'<input type="file" name="myFile" class="drop-zone__input" Accept="Application/Pdf">';
+                        echo'</div>';
+                      echo'</td>';
+                    echo'</tr>';
+                    break;
+
+                  default:
+                    break;
+                }
+                
+              ?>
+
+
+                
+              
+              <?php
+                /*switch ($_SESSION['status']) {
+                  case 'Sekretaris Dinas':
+                    echo'<tr>';
+                      echo'<th>Upload File</th>';
+                      echo'<td>';
+                        echo'<button class="add-surat" onclick="window.location.href='."'tambah-surat-disposisi.php'".';">+ Tambah Disposisi</button>';
+                        // echo'<button class="add-surat" onclick="window.location.href='."'tambah-surat-disposisi.php?id=".$surat['nomer_surat']."'".';">+ Tambah Disposisi</button>';
+                      echo'</td>';
+                    echo'</tr>';
+                    break;
+
+                  default:
+                    break;
+                }
+                */
+              ?>
+
               <tr>
                 <?php
                   if($_SESSION['status']=="Kepala Dinas"){
@@ -210,12 +264,15 @@
                         break;
                       
                       case 'Kepala Dinas':
-                        echo '<select class="form-select" aria-label="Default select example" name="status">';
-                          echo'<option value="" disabled>Pilih status:</option>';
-                          echo'<option value="kasubag">Kasubag</option>';
-                          echo'<option value="kabid">Kepala Bidang</option>';
-                          echo'<option value="sekdis">Sekretaris Dinas</option>';
-                        echo'</select>';
+                        echo'<input type="text" name="nomer_agenda" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Disposisikan kepada..">';
+                        
+
+                        // echo '<select class="form-select" aria-label="Default select example" name="status">';
+                        //   echo'<option value="" disabled>Pilih status:</option>';
+                        //   echo'<option value="kasubag">Kasubag</option>';
+                        //   echo'<option value="kabid">Kepala Bidang</option>';
+                        //   echo'<option value="sekdis">Sekretaris Dinas</option>';
+                        // echo'</select>';
                         break;
 
                       default:

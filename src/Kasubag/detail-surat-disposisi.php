@@ -214,21 +214,7 @@
                   break;
               }
             ?>
-            <?php
-              switch ($_SESSION['status']) {
-                case 'Sekretaris Dinas':
-                  echo'<tr>';
-                    echo'<th>Upload File</th>';
-                    echo'<td>';
-                      echo'<button class="add-surat" onclick="window.location.href='."'tambah-surat-disposisi.php?id=".$surat['nomer_surat']."'".';">+ Tambah Disposisi</button>';
-                    echo'</td>';
-                  echo'</tr>';
-                  break;
-
-                default:
-                  break;
-              }
-            ?>
+            
             
           </table>
           <form action= <?php echo "..\..\Database\process-function\proses-laporan.php?id=".$surat['nomer_surat'];?> method="POST">
@@ -250,6 +236,21 @@
                   break;
 
                 case 'Kasubag':
+                  echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
+                    echo'<thead style="background-color: #3A36DB; color: azure;">';
+                      echo'<tr>';
+                        echo'<th scope="col"><div class="text-top flex-fill" style="text-align: center;" >Laporan</div></th>';
+                      echo'</tr>';
+                    echo'</thead>';
+                    echo'<tbody>';
+                      echo'<td>';
+                        echo'<textarea style="width: 800px; padding: 20px;" name="laporan" id="" cols="30" rows="10"></textarea>';
+                      echo'</td>';
+                    echo'</tbody>';
+                  echo'</table>';
+                  break;
+
+                case 'Sekretaris Dinas':
                   echo '<table class="table " style="text-align: center;  border-radius: 5px;"" >';
                     echo'<thead style="background-color: #3A36DB; color: azure;">';
                       echo'<tr>';
