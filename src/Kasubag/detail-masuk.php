@@ -271,9 +271,9 @@
                       
                       case 'Kepala Dinas':
 
-                        if($surat['kepdis']=2 || $surat['kepdis']=1){
+                        if($surat['kepdis']==2 || $surat['kepdis']==1){
                           echo'<input type="text" disabled name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="'.$surat['disposisi'].'">';
-                        }else{
+                        }elseif($surat['kepdis']==0){
                           echo'<input type="text" name="status" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Disposisikan kepada..">';
                         }
                         // echo '<select class="form-select" aria-label="Default select example" name="status">';
